@@ -12,7 +12,7 @@ Early project goals include:
 ## Credits
 
 This system is based on:
- - the Foundry VTT Boilerplate system by XXX
+ - the Foundry VTT Boilerplate system by Asacolips.
  - The video tutorials by Cédric Hauteville you can watch them here: https://www.youtube.com/playlist?list=PLFV9z59nkHDccUbRXVt623UdloPTclIrz 
 
 Icons have been provided by https://game-icons.net
