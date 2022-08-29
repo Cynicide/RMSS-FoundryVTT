@@ -1,0 +1,108 @@
+<form class="actor-sheet {{cssClass}}" autocomplete="off">
+  <!-- Header Section-->
+  
+  <header class="sheet-header">
+    
+    <div class="container">
+      
+      <!-- Actor Icon Section-->
+      
+      <div class="actor-icon">
+        <img src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="64" width="64"/>
+      </div>
+      
+      <!-- Resource Boxes Section-->
+      
+      <div class="resource-container">      
+        
+        <div class="resource-entry">
+          {{ localize "rmss.player_character.resources.hits" }}
+          <h4><input name="data.attributes.hits.current" type="text" value="{{data.attributes.hits.current}}"/>/<input name="data.attributes.hits.max" type="text" value="{{data.attributes.hits.max}}"/></h4>
+        </div>
+        
+        <div class="resource-entry">
+          {{ localize "rmss.player_character.resources.exhaustion_points" }}
+          <h4><input name="data.attributes.exhaustion_points.current" type="text" value="{{data.attributes.exhaustion_points.current}}"/>/<input name="data.attributes.exhaustion_points.max" type="text" value="{{data.attributes.exhaustion_points.max}}"/></h4>
+        </div>
+        
+        <div class="resource-entry">
+          {{ localize "rmss.player_character.resources.power_points" }}
+          <h4><input name="data.attributes.power_points.current" type="text" value="{{data.attributes.power_points.current}}"/>/<input name="data.attributes.power_points.max" type="text" value="{{data.attributes.power_points.max}}"/></h4>
+        </div>
+      </div>
+      
+      <!-- Name, XP and Level Section-->
+      
+      <div class="header-container">
+        <div class="header-text">     
+          <label for="name">{{ localize "rmss.player_character.name" }}</label>
+          <input name="name" type="text" value="{{actor.name}}" placeholder="{{ localize Name }}"/>
+        </div>
+        
+        <div class="header-text flexrow">
+          <label for="level">{{ localize "rmss.player_character.level" }}</label>
+          <input name="level" type="text" value="{{data.attributes.level.value}}"/>
+        </div>
+        
+        <div class="header-text flexrow">
+          <label for="experience">{{ localize "rmss.player_character.experience" }}</label>
+          <input name="experience" type="text" value="{{data.attributes.experience_points.value}}"/>
+        </div>
+      </div>
+      
+    </div>
+  </header>
+  
+  <!-- Page Selector -->
+  {{!-- Sheet Tab Navigation --}}
+  <nav class="sheet-tabs tabs" data-group="primary">
+    {{!-- Default tab is specified in actor-sheet.mjs --}}
+    <a class="item" data-tab="Record">{{ localize "rmss.pc_sheet_tabs.record" }}</a>
+    <a class="item" data-tab="SkillCategory">{{ localize "rmss.pc_sheet_tabs.skill_categories" }}</a>
+    <a class="item" data-tab="Skills">{{ localize "rmss.pc_sheet_tabs.skills" }}</a>
+    <a class="item" data-tab="Equipment">{{ localize "rmss.pc_sheet_tabs.equipment" }}</a>
+    <a class="item" data-tab="StatusRecord">{{ localize "rmss.pc_sheet_tabs.status_record" }}</a>
+    <a class="item" data-tab="ExperiencePoints">{{ localize "rmss.pc_sheet_tabs.experience_points" }}</a>
+  </nav>
+  <!-- Body Section-->
+  <section class="sheet-body">
+    <div class="tab record" data-group="primary" data-tab="Record">
+      <div class="container">
+        <div class="fixed-info-container">
+          {{> "systems/rmss/templates/sheets/actors/parts/actor-fixed-info.html" }}
+          {{> "systems/rmss/templates/sheets/actors/parts/actor-armor-info.html" }}
+          {{> "systems/rmss/templates/sheets/actors/parts/actor-resistance.html" }}
+          {{> "systems/rmss/templates/sheets/actors/parts/actor-race-stat-fixed-info.html" }}
+          {{> "systems/rmss/templates/sheets/actors/parts/actor-role-traits.html" }}
+          {{> "systems/rmss/templates/sheets/actors/parts/actor-background-info.html" }}
+        </div>
+        
+        <div class="stat-container">
+          {{> "systems/rmss/templates/sheets/actors/parts/actor-stats.html" }}
+          {{> "systems/rmss/templates/sheets/actors/parts/actor-fav-skills.html" }}
+        </div>
+
+      </div>
+    </div>
+    
+    <div class="tab skill_categories" data-group="primary" data-tab="SkillCategory">
+      {{> "systems/rmss/templates/sheets/actors/parts/actor-skill-categories-grid.html" }}
+    </div>
+    
+    <div class="tab skills" data-group="primary" data-tab="Skills">
+      {{> "systems/rmss/templates/sheets/actors/parts/actor-skills-grid.html" }}
+    </div>
+
+    <div class="tab equipment" data-group="primary" data-tab="Equipment">
+      <div class="container">
+        <div class="equipment-container">
+          {{> "systems/rmss/templates/sheets/actors/parts/actor-items.html" }}
+        </div>
+        <div class="money-container">
+          {{> "systems/rmss/templates/sheets/actors/parts/actor-money.html" }}
+        </div> 
+      </div>
+    </div>
+  </section>
+</form>
+

@@ -1,0 +1,32 @@
+<form class="{{cssClass}}" autocomplete="off">
+    <header class="sheet-header">
+        <img src="{{item.img}}" data-edit="img" title="{{item.name}}" height="64" width="64"/>
+        <h1><input name="name" type="text" value="{{item.name}}" placeholder="{{ localize 'Name' }}"/></h1>
+    </header>
+    <div class="sheet-content">
+        <div>
+            <table>
+                <tr>
+                    <th>{{localize "rmss.item.quantity"}}</th>
+                    <th>{{localize "rmss.item.weight"}}</th>
+                    <th>{{localize "rmss.item.cost"}}</th>
+                    <th>{{localize "rmss.item.prod_time"}}</th>
+                </tr>
+                <td>
+                    <input name="data.quantity" type="text" value="{{data.quantity}}" data-dtype="Number"/>
+                </td>
+                <td>
+                    <input name="data.weight" type="text" value="{{data.weight}}" data-dtype="Number"/>
+                </td>
+                <td>
+                    <input name="data.cost" type="text" value="{{data.cost}}" data-dtype="String"/>
+                </td>
+                <td>
+                    <input name="data.prod_time" type="text" value="{{data.prod_time}}" data-dtype="String"/>
+                </td>
+            </table>
+                {{localize "rmss.item.description"}}
+                {{editor content=data.description target="data.description" button=true owner=owner editable=editable}}
+        </div>
+    </div>
+</form>

@@ -1,0 +1,52 @@
+<form class="{{cssClass}}" autocomplete="off">
+    <header class="sheet-header">
+        <img src="{{item.img}}" data-edit="img" title="{{item.name}}" height="64" width="64"/>
+        <h1><input name="name" type="text" value="{{item.name}}" placeholder="{{ localize 'Name' }}"/></h1>
+    </header>
+    <div class="sheet-content">
+        <div>
+            <table>
+                <tr>
+                    <th>{{localize "rmss.skill.favorite"}}</th>
+                    <th>{{localize "rmss.skill.ranks"}}</th>
+                    <th>{{localize "rmss.skill.new_ranks"}}</th>
+                    <th>{{localize "rmss.skill.rank_bonus"}}</th>
+                    <th>{{localize "rmss.skill.category_bonus"}}</th>
+                    <th>{{localize "rmss.skill.item_bonus"}}</th>
+                    <th>{{localize "rmss.skill.special_bonus_1"}}</th>
+                    <th>{{localize "rmss.skill.special_bonus_2"}}</th>
+                    <th>{{localize "rmss.skill.total_bonus"}}</th>
+                </tr>
+                <td>
+                    <input type="checkbox" name="data.favorite" {{checked data.favorite}}/>
+                </td>
+                <td>
+                    <input name="data.ranks" type="text" value="{{data.ranks}}" data-dtype="Number"/>
+                </td>
+                <td>
+                    <input name="data.new_ranks" type="text" value="{{data.new_ranks}}" data-dtype="Number"/>
+                </td>
+                <td>
+                    <input name="data.rank_bonus" type="text" value="{{data.rank_bonus}}" data-dtype="Number"/>
+                </td>
+                <td>
+                    <input name="data.category_bonus" type="text" value="{{data.category_bonus}}" data-dtype="Number"/>
+                </td>
+                <td>
+                    <input name="data.item_bonus" type="text" value="{{data.item_bonus}}" data-dtype="Number"/>
+                </td>
+                <td>
+                    <input name="data.special_bonus_1" type="text" value="{{data.special_bonus_1}}" data-dtype="Number"/>
+                </td>
+                <td>
+                    <input name="data.special_bonus_2" type="text" value="{{data.special_bonus_2}}" data-dtype="Number"/>
+                </td>
+                <td>
+                    <input name="data.total_bonus" type="text" value="{{data.total_bonus}}" data-dtype="Number"/>
+                </td>
+            </table>
+                {{localize "rmss.skill.description"}}
+                {{editor content=data.description target="data.description" button=true owner=owner editable=editable}}
+        </div>
+    </div>
+</form> 
