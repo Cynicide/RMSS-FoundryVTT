@@ -1,0 +1,40 @@
+<form class="{{cssClass}}" autocomplete="off">
+    <header class="sheet-header">
+        <img src="{{item.img}}" data-edit="img" title="{{item.name}}" height="64" width="64"/>
+        <h1><input name="name" type="text" value="{{item.name}}" placeholder="{{ localize 'Name' }}"/></h1>
+    </header>
+    <div class="sheet-content">
+        <div>
+            <table>
+                <tr>
+                    <th>{{localize "rmss.item.quantity"}}</th>
+                    <th>{{localize "rmss.herb_or_poison.weight"}}</th>
+                    <th>{{localize "rmss.herb_or_poison.codes"}}</th>
+                    <th>{{localize "rmss.herb_or_poison.form_and_prep"}}</th>
+                    <th>{{localize "rmss.herb_or_poison.cost"}}</th>
+                    <th>{{localize "rmss.herb_or_poison.af"}}</th>
+                </tr>
+                <td>
+                    <input name="data.quantity" type="text" value="{{data.quantity}}" data-dtype="Number"/>
+                </td>
+                <td>
+                    <input name="data.weight" type="text" value="{{data.weight}}" data-dtype="Number"/>
+                </td> 
+                <td>
+                    <input name="data.codes" type="text" value="{{data.codes}}" data-dtype="String"/>
+                </td>                
+                <td>
+                    <input name="data.form_and_prep" type="text" value="{{data.form_and_prep}}" data-dtype="String"/>
+                </td>
+                <td>
+                    <input name="data.cost" type="text" value="{{data.cost}}" data-dtype="String"/>
+                </td>
+                <td>
+                    <input name="data.af" type="text" value="{{data.af}}" data-dtype="Number"/>
+                </td>
+            </table>
+                {{localize "rmss.item.description"}}
+                {{editor content=data.description target="data.description" button=true owner=owner editable=editable}}
+        </div>
+    </div>
+</form>

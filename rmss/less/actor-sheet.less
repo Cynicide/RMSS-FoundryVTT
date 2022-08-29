@@ -1,0 +1,153 @@
+// General Elements
+
+.container { 
+    display: flex;
+    }
+
+// Header CSS
+
+.actor-icon {
+    flex-shrink: 1;
+  }
+
+
+.header-container {
+    flex-grow: 2;
+    outline: 1px solid; /* use instead of border */
+    margin-top: 1px;
+    margin-left: 1px;
+    padding: 5px;
+}
+
+.header-text {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+      }
+
+// Resource Elements in Headers
+
+.resource-container {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 3;
+    text-align: -webkit-center;
+}
+
+.resource-container > * {
+    flex: 1 1 0;
+}
+
+.resource-entry {
+    outline: 1px solid; /* use instead of border */
+    margin-top: 1px;
+    margin-left: 1px;
+    padding: 5px;
+}
+
+.resource-entry input{
+    width: 50px;
+    border: none;
+}
+
+.stat-container {
+    flex-direction: column;
+    flex-shrink: 1;
+  }
+
+.equipment-container {
+    flex-direction: column;
+    flex-grow: 1;
+  }
+
+.stat-block {
+    outline: 1px solid; /* use instead of border */
+    margin-top: 1px;
+    margin-left: 1px;
+    padding: 5px;
+}
+
+.stat-name, .money-name {
+    width: 75px;
+    border: none;
+    font-family: Signika, sans-serif;
+    font-size: 12px;
+}
+
+.stat-name input {
+    border: none;
+}
+
+.stat-header {
+    font-family: Signika, sans-serif;
+    font-size: 12px;
+}
+
+// Fixed Info CSS
+
+.fixed-info-container {
+    flex-grow: 3;
+    flex-direction: row;
+    font-family: Signika, sans-serif;
+    font-size: 12px;
+}
+
+.fixed-info-section {
+    outline: 1px solid; /* use instead of border */
+    margin-top: 1px;
+    margin-left: 1px;
+    padding: 5px;
+}
+
+.armor-block {
+    outline: 1px solid; /* use instead of border */
+    margin-top: 1px;
+    margin-left: 1px;
+    padding: 5px;    
+}
+
+.race-stat-fixed-info-block {
+    outline: 1px solid; /* use instead of border */
+    margin-top: 1px;
+    margin-left: 1px;
+    padding: 5px;    
+}
+
+.role-traits-block {
+    outline: 1px solid; /* use instead of border */
+    margin-top: 1px;
+    margin-left: 1px;
+    padding: 5px;    
+}
+
+.background-info-block {
+    outline: 1px solid; /* use instead of border */
+    margin-top: 1px;
+    margin-left: 1px;
+    padding: 5px;    
+}
+
+.resistance-block {
+    outline: 1px solid; /* use instead of border */
+    margin-top: 1px;
+    margin-left: 1px;
+    padding: 5px;
+}
+
+// Debugging
+
+.red {
+    background-color: orangered;
+}
+
+.blue {
+    background-color: lightblue;
+}
+
+.grey {
+    background-color: lightgrey;
+}
+
+.green {
+    background-color: lightseagreen;
+}

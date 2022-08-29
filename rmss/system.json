@@ -1,0 +1,31 @@
+{
+  "name": "rmss",
+  "title": "Rolemaster Standard System",
+  "description": "The Rolemaster Standard System system for FoundryVTT.",
+  "author": "Cynicide",
+  "version": "0.0.1",
+  "minimumCoreVersion": "0.8.6",
+  "compatibleCoreVersion": "9",
+  "esmodules":[
+    "rmss.js"
+  ],
+  "styles": ["rmss.css"],
+  "packs": [    {
+    "name": "skill_categories",
+    "label": "Skill Categories",
+    "system": "rmss",
+    "path": "./packs/skill_categories.db",
+    "type": "Item"
+  }
+  ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    }
+  ],
+  "gridDistance": 5,
+  "gridUnits": "ft",
+  "license": "LICENSE.txt"
+}

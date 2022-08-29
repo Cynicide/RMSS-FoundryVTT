@@ -1,0 +1,31 @@
+<div class="skills-grid-container">
+    <div class="skills-grid-heading">{{ localize "rmss.pc_sheet_skills.favorite" }}</div>
+    <div class="skills-grid-heading">{{ localize "rmss.pc_sheet_skills.skill_name" }}</div>
+    <div class="skills-grid-heading">{{ localize "rmss.pc_sheet_skills.ranks" }}</div>
+    <div class="skills-grid-heading">{{ localize "rmss.pc_sheet_skills.new_ranks" }}</div>
+    <div class="skills-grid-heading">{{ localize "rmss.pc_sheet_skills.rank_bonus" }}</div>
+    <div class="skills-grid-heading">{{ localize "rmss.pc_sheet_skills.category_bonus" }}</div>
+    <div class="skills-grid-heading">{{ localize "rmss.pc_sheet_skills.item_bonus" }}</div>
+    <div class="skills-grid-heading">{{ localize "rmss.pc_sheet_skills.special_bonus" }}</div>
+    <div class="skills-grid-heading">{{ localize "rmss.pc_sheet_skills.special_bonus" }}</div>
+    <div class="skills-grid-heading">{{ localize "rmss.pc_sheet_skills.total_bonus" }}</div>
+    <div class="skills-grid-heading">
+      <a class="item-create" title="Create Skill" data-type="skill"><i class="fas fa-plus"></i>{{ localize "rmss.pc_sheet_skills.add_skill" }}</a>
+    </div>
+  {{#each playerskill as |skill id|}}
+      <div><input type="checkbox" name="data.favorite" {{checked skill.data.favorite}}/></div>
+      <div>{{skill.name}}</div>
+      <div>{{skill.data.ranks}}</div>
+      <div>{{skill.data.new_ranks}}</div>
+      <div>{{skill.data.rank_bonus}}</div>
+      <div>{{skill.data.category_bonus}}</div>
+      <div>{{skill.data.item_bonus}}</div>
+      <div>{{skill.data.special_bonus_1}}</div>
+      <div>{{skill.data.special_bonus_2}}</div>
+      <div>{{skill.data.total_bonus}}</div>
+      <div>
+        <a class="item-edit" title="Edit Skill" data-item-id="{{skill._id}}"><i class="fas fa-edit"></i></a>
+        <a class="item-delete" title="Delete Skill" data-item-id="{{skill._id}}"><i class="fas fa-trash"></i></a>
+      </div>
+  {{/each}}
+</div>

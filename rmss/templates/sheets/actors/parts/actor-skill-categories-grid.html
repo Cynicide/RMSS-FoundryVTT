@@ -1,0 +1,33 @@
+<div class="skillcat-grid-container">
+    <div class="skillcat-grid-heading">{{ localize "rmss.pc_sheet_skill_categories.skillcat_name" }}</div>
+    <div class="skillcat-grid-heading">{{ localize "rmss.pc_sheet_skill_categories.applicable_stats" }}</div>
+    <div class="skillcat-grid-heading">{{ localize "rmss.pc_sheet_skill_categories.dev_cost" }}</div>
+    <div class="skillcat-grid-heading">{{ localize "rmss.pc_sheet_skill_categories.ranks" }}</div>
+    <div class="skillcat-grid-heading">{{ localize "rmss.pc_sheet_skill_categories.new_ranks" }}</div>
+    <div class="skillcat-grid-heading">{{ localize "rmss.pc_sheet_skill_categories.rank_bonus" }}</div>
+    <div class="skillcat-grid-heading">{{ localize "rmss.pc_sheet_skill_categories.stat_bonus" }}</div>
+    <div class="skillcat-grid-heading">{{ localize "rmss.pc_sheet_skill_categories.prof_bonus" }}</div>
+    <div class="skillcat-grid-heading">{{ localize "rmss.pc_sheet_skill_categories.special_bonus" }}</div>
+    <div class="skillcat-grid-heading">{{ localize "rmss.pc_sheet_skill_categories.special_bonus" }}</div>
+    <div class="skillcat-grid-heading">{{ localize "rmss.pc_sheet_skill_categories.total_bonus" }}</div>
+    <div class="skillcat-grid-heading">
+      <a class="item-create" title="Create Skill Category" data-type="skill_category"><i class="fas fa-plus"></i>{{ localize "rmss.pc_sheet_skill_categories.add_skillcat" }}</a>
+    </div>
+  {{#each skillcat as |skill_category id|}}
+      <div>{{skill_category.name}}</div>
+      <div>{{skill_category.data.applicable_stats}}</div>
+      <div>{{skill_category.data.development_cost}}</div>
+      <div>{{skill_category.data.ranks}}</div>
+      <div>{{skill_category.data.new_ranks}}</div>
+      <div>{{skill_category.data.rank_bonus}}</div>
+      <div>{{skill_category.data.stat_bonus}}</div>
+      <div>{{skill_category.data.prof_bonus}}</div>
+      <div>{{skill_category.data.special_bonus_1}}</div>
+      <div>{{skill_category.data.special_bonus_2}}</div>
+      <div>{{skill_category.data.total_bonus}}</div>
+      <div>
+        <a class="item-edit" title="Edit Category" data-item-id="{{skill_category._id}}"><i class="fas fa-edit"></i></a>
+        <a class="item-delete item" title="Delete Category" data-item-id="{{skill_category._id}}"><i class="fas fa-trash"></i></a>
+      </div>    
+  {{/each}}
+</div>

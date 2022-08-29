@@ -1,0 +1,16 @@
+<table>
+    <th><div class="skill-name skill-headeritem">{{ localize "rmss.pc_sheet_skills.skill_name" }}</div></th>
+    <th><div class="skill-entry skill-headeritem">{{ localize "rmss.pc_sheet_skills.ranks" }}</div></th>
+    <th><div class="skill-entry skill-headeritem">{{ localize "rmss.pc_sheet_skills.total_bonus" }}</div></th>
+  {{#each playerskill as |skill id|}}
+    {{#if skill.data.favorite}}  
+        <tr class="item" data-item-id="{{skill._id}}">
+            <td><div class="skill-name">
+                <h4>{{skill.name}}</h4>
+            </div></td>
+            <td><div class="skill-entry item-prop">{{skill.data.ranks}}</div></td>
+            <td><div class="skill-entry item-prop">{{skill.data.total_bonus}}</div></td>
+        </tr>
+    {{/if}}
+  {{/each}}
+</table>

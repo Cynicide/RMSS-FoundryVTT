@@ -1,0 +1,304 @@
+{
+  "Actor": {
+    "types": ["character", "npc"],
+    "templates": {
+      "role_traits": {
+        "role_traits": {
+          "appearance": 10,
+          "sex": "mysex",
+          "skin": "myskin",
+          "apparent_age": 30,
+          "actual_age": 35,
+          "height": "myheight",
+          "weight": "myweight",
+          "hair": "myhair",
+          "eyes": "myeyes",
+          "personality": "mypersonality",
+          "motivations": "mymotivations",
+          "alignment": "myalignment"
+        }
+      },
+      "race_stat_fixed_info": {
+        "race_stat_fixed_info" : {
+          "soul_departure_rounds": 5,
+          "recovery_multiplier": 7,
+          "body_development_progression": "research",
+          "pp_development_progression": "research",
+          "recover_hits_per_hour_resting": 6,
+          "recover_hits_per_sleep_cycle": 7,
+          "recover_pp_per_hour_resting": 8,
+          "recover_pp_per_sleep_cycle": 9
+        }
+      },
+      "armor_info": {
+        "armor_info": {
+          "armor_type": 7,
+          "mmp": -10,
+          "weight_penalty": -5,
+          "missile_penalty": 30,
+          "quickness_penalty": 40,
+          "quickness_bonus": 60,
+          "adrenal_defense": 50,
+          "shield_bonus": 20,
+          "magic": "research",
+          "total_db": 102
+        }
+      },
+      "fixed_info": {
+        "fixed_info": {
+          "race": "myrace",
+          "profession": "myprofession",
+          "training_packages": "mytrainingpackages",
+          "realm": "myrealm"
+        }
+      },
+      "resistance_rolls": {
+        "resistance_rolls": {
+          "channeling": 0,
+          "essence": 0,
+          "mentalism": 0,
+          "chann_ess": 0,
+          "chann_ment": 0,
+          "ess_ment": 0,
+          "arcane": 0,
+          "poison_disease": 0,
+          "fear": 0
+        }
+      },
+      "background": {
+        "background": {
+          "nationality": "mynationality",
+          "home_town": "myhometown",
+          "deity": "mydeity",
+          "patron": "mypatron",
+          "parents": "myparents",
+          "spouse": "myspouse",
+          "children": "mychildren",
+          "other": "myother"
+        }
+      },
+      "stats": {
+        "stats": {
+          "agility": {
+            "shortname": "Ag",
+            "temp": 1,
+            "potential": 2,
+            "basic_bonus": 3,
+            "racial_bonus": 4,
+            "special_bonus": 5,
+            "stat_bonus": 0
+          },
+          "constitution": {
+            "shortname": "Co",
+            "temp": 6,
+            "potential": 7,
+            "basic_bonus": 8,
+            "racial_bonus": 9,
+            "special_bonus": 10,
+            "stat_bonus": 0
+          },
+          "memory": {
+            "shortname": "Me",
+            "temp": 11,
+            "potential": 12,
+            "basic_bonus": 13,
+            "racial_bonus": 14,
+            "special_bonus": 15,
+            "stat_bonus": 0
+          },
+          "reasoning": {
+            "shortname": "Re",
+            "temp": 16,
+            "potential": 17,
+            "basic_bonus": 18,
+            "racial_bonus": 19,
+            "special_bonus": 20,
+            "stat_bonus": 0
+          },
+          "self_discipline": {
+            "shortname": "SD",
+            "temp": 21,
+            "potential": 22,
+            "basic_bonus": 23,
+            "racial_bonus": 24,
+            "special_bonus": 25,
+            "stat_bonus": 0
+          },
+          "empathy": {
+            "shortname": "Em",
+            "temp": 26,
+            "potential": 27,
+            "basic_bonus": 28,
+            "racial_bonus": 29,
+            "special_bonus": 30,
+            "stat_bonus": 0
+          },
+          "intuition": {
+            "shortname": "In",
+            "temp": 31,
+            "potential": 32,
+            "basic_bonus": 33,
+            "racial_bonus": 34,
+            "special_bonus": 35,
+            "stat_bonus": 0
+          },
+          "presence": {
+            "shortname": "Pr",
+            "temp": 36,
+            "potential": 37,
+            "basic_bonus": 38,
+            "racial_bonus": 39,
+            "special_bonus": 40,
+            "stat_bonus": 0
+          },
+          "quickness": {
+            "shortname": "Qu",
+            "temp": 41,
+            "potential": 42,
+            "basic_bonus": 43,
+            "racial_bonus": 44,
+            "special_bonus": 45,
+            "stat_bonus": 0
+          },
+          "strength": {
+            "shortname": "St",
+            "temp": 46,
+            "potential": 47,
+            "basic_bonus": 48,
+            "racial_bonus": 49,
+            "special_bonus": 50,
+            "stat_bonus": 0
+          }
+        }
+      },
+      "money": {
+        "mithril": 1,
+        "platinum": 2,
+        "gold": 3,
+        "silver": 4,
+        "bronze": 5,
+        "copper": 6,
+        "tin": 7,
+        "iron": 8
+      }
+    },
+    
+    "character": {
+      "templates": ["background", "stats", "resistance_rolls", "armor_info", "fixed_info", "race_stat_fixed_info", "role_traits", "money"],
+      "attributes": {
+        "level": {
+          "value": 1
+        },
+        "hits": {
+          "current": 1,
+          "max": 1
+        },
+        "exhaustion_points": {
+          "current": 2,
+          "max": 2
+        },
+        "power_points": {
+          "current": 3,
+          "max": 3
+        },
+        "experience_points": {
+          "value": 0
+        }
+      }
+    }
+  },
+  "Item": {
+    "types": ["item", "skill_category", "skill", "armor", "weapon", "transport", "herb_or_poison", "spell"],
+    "templates": {
+      "base": {
+        "description": "Description here."
+      }
+    },
+    "item": {
+      "templates": ["base"],
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "prod_time": 0
+    },
+    "transport": {
+      "templates": ["base"],
+      "feet_per_round": 1,
+      "miles_per_hour": 0,
+      "cost": 0,
+      "maneuver": 0,
+      "height": 0,
+      "weight": 0,
+      "capacity": 0,
+      "offensive_bonus": 0
+    },
+    "armor": {
+      "templates": ["base"],
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "prod_time": 0,
+      "at": 0
+    },
+    "weapon": {
+      "templates": ["base"],
+      "quantity": 1,
+      "cost": 0,
+      "weight": 0,
+      "type" : "nothing",
+      "prod_time": 0,
+      "at": 0,
+      "breakage_range": "nothing",
+      "strength": "nothing",
+      "fumble_range": "nothing"
+    },
+    "herb_or_poison": {
+      "templates": ["base"],
+      "quantity": 1,
+      "weight": 0,
+      "codes": "nothing",
+      "form_and_prep" : "nothing",
+      "cost": 0,
+      "af": 0
+    },
+    "skill": {
+      "templates": ["base"],
+      "category" : "",
+      "ranks": 0,
+      "new_ranks": 0,
+      "rank_bonus": 0,
+      "category_bonus": 0,
+      "item_bonus": 0,
+      "special_bonus_1": 0,
+      "special_bonus_2": 0,
+      "total_bonus": 0,
+      "favorite": false
+    },
+    "skill_category": {
+      "templates": ["base"],
+      "applicable_stats": "St/Ag/St",
+      "app_stat_1": "None",
+      "app_stat_2": "None",
+      "app_stat_3": "None",      
+      "development_cost": "0",
+      "ranks": 0,
+      "new_ranks": 0,
+      "rank_bonus": 0,
+      "stat_bonus": 0,
+      "prof_bonus": 0,
+      "special_bonus_1": 0,
+      "special_bonus_2": 0,
+      "total_bonus": 0,
+      "favorite": false
+    },
+    "spell": {
+      "spell_list": "Open Channeling",
+      "level": 1,
+      "area_of_effect": "10 x 10 x 1",
+      "duration": "C",
+      "range": 50,
+      "type": "E",
+      "description": "My New Spell!"
+    }
+  }
+}

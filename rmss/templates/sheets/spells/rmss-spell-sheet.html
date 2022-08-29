@@ -1,0 +1,42 @@
+<form class="{{cssClass}}" autocomplete="off">
+    <header class="sheet-header">
+        <img src="{{item.img}}" data-edit="img" title="{{item.name}}" height="64" width="64"/>
+        <h1><input name="name" type="text" value="{{item.name}}" placeholder="{{ localize 'Name' }}"/></h1>
+    </header>
+    <div class="sheet-content">
+        <div>
+            <table>
+                <tr>
+                    <th>{{localize "rmss.spell.spell_list"}}</th>
+                    <th>{{localize "rmss.spell.level"}}</th>
+                    <th>{{localize "rmss.spell.area_of_effect"}}</th>
+                    <th>{{localize "rmss.spell.duration"}}</th>
+                    <th>{{localize "rmss.spell.range"}}</th>
+                    <th>{{localize "rmss.spell.type"}}</th>
+
+                </tr>
+                <td>
+                    <input name="data.spell_list" type="text" value="{{data.spell_list}}" data-dtype="String"/>
+                </td>
+                <td>
+                    <input name="data.level" type="text" value="{{data.level}}" data-dtype="Number"/>
+                </td>
+                <td>
+                    <input name="data.area_of_effect" type="text" value="{{data.area_of_effect}}" data-dtype="String"/>
+                </td>                
+                <td>
+                    <input name="data.duration" type="text" value="{{data.duration}}" data-dtype="String"/>
+                </td>
+                <td>
+                    <input name="data.range" type="text" value="{{data.range}}" data-dtype="Number"/>
+                </td>
+                <td>
+                    <input name="data.type" type="text" value="{{data.type}}" data-dtype="String"/>
+                </td>
+
+            </table>
+                {{localize "rmss.spell.description"}}
+                {{editor content=data.description target="data.description" button=true owner=owner editable=editable}}
+        </div>
+    </div>
+</form>

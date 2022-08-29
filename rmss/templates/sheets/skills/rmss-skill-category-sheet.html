@@ -1,0 +1,76 @@
+<form class="{{cssClass}}" autocomplete="off">
+    <header class="sheet-header">
+        <img src="{{item.img}}" data-edit="img" title="{{item.name}}" height="64" width="64"/>
+        <h1><input name="name" type="text" value="{{item.name}}" placeholder="{{ localize 'Name' }}"/></h1>
+    </header>
+    <div class="sheet-content">
+        <div class="applicable-stats-grid-container">
+            <div>
+                Applicable Stat 1
+                <select name="data.app_stat_1" class="app-stat-selector" value="{{data.app_stat_1}}" itemid="{{ item._id }}">
+                    {{selectOptions applicable_stat_list selected=applicable_stat_1_selected }}
+                </select>
+            </div>
+            <div>
+                Applicable Stat 2
+                <select name="data.app_stat_2" class="app-stat-selector" value="{{data.app_stat_2}}" itemid="{{ item._id }}">
+                    {{selectOptions applicable_stat_list selected=applicable_stat_2_selected }}
+                </select>
+            </div>
+            <div>
+                Applicable Stat 2
+                <select name="data.app_stat_3" class="app-stat-selector" value="{{data.app_stat_3}}" itemid="{{ item._id }}">
+                    {{selectOptions applicable_stat_list selected=applicable_stat_3_selected }}
+                </select>
+            </div>
+        </div>
+        <div>
+            <table>
+                <tr>
+                    <th>{{localize "rmss.skill_category.applicable_stats"}}</th>
+                    <th>{{localize "rmss.skill_category.development_cost"}}</th>
+                    <th>{{localize "rmss.skill_category.ranks"}}</th>
+                    <th>{{localize "rmss.skill_category.new_ranks"}}</th>
+                    <th>{{localize "rmss.skill_category.rank_bonus"}}</th>
+                    <th>{{localize "rmss.skill_category.stat_bonus"}}</th>
+                    <th>{{localize "rmss.skill_category.prof_bonus"}}</th>
+                    <th>{{localize "rmss.skill_category.special_bonus_1"}}</th>
+                    <th>{{localize "rmss.skill_category.special_bonus_2"}}</th>
+                    <th>{{localize "rmss.skill_category.total_bonus"}}</th>
+                </tr>
+                <td>
+                    <input name="data.applicable_stats" type="text" value="{{data.applicable_stats}}" data-dtype="String"/>
+                </td>
+                <td>
+                    <input name="data.development_cost" type="text" value="{{data.development_cost}}" data-dtype="String"/>
+                </td>
+                <td>
+                    <input name="data.ranks" type="text" value="{{data.ranks}}" data-dtype="Number"/>
+                </td>
+                <td>
+                    <input name="data.new_ranks" type="text" value="{{data.new_ranks}}" data-dtype="Number"/>
+                </td>
+                <td>
+                    <input name="data.rank_bonus" type="text" value="{{data.rank_bonus}}" data-dtype="Number"/>
+                </td>
+                <td>
+                    <input name="data.stat_bonus" type="text" value="{{data.stat_bonus}}" data-dtype="Number"/>
+                </td>
+                <td>
+                    <input name="data.prof_bonus" type="text" value="{{data.prof_bonus}}" data-dtype="Number"/>
+                </td>
+                <td>
+                    <input name="data.special_bonus_1" type="text" value="{{data.special_bonus_1}}" data-dtype="Number"/>
+                </td>
+                <td>
+                    <input name="data.special_bonus_2" type="text" value="{{data.special_bonus_2}}" data-dtype="Number"/>
+                </td>
+                <td>
+                    <input name="data.total_bonus" type="text" value="{{data.total_bonus}}" data-dtype="Number"/>
+                </td>
+            </table>
+            {{localize "rmss.skill_category.description"}}
+            {{editor content=data.description target="data.description" button=true owner=owner editable=editable}}
+        </div>
+    </div>
+</form>

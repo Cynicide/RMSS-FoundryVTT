@@ -1,0 +1,235 @@
+{
+    "rmss": {
+        "player_character": {
+            "name": "Name:",
+            "level": "Level:",
+            "experience": "XP:",
+            "resources": {
+                "hits": "Hits",
+                "exhaustion_points": "Exhaustion Points",
+                "power_points": "Power Points"
+            },
+            "attribute_headers": {
+                "stat": "Stat",
+                "temp": "Temp",
+                "pot": "Potential",
+                "basic_bonus": "Basic Bonus",
+                "racial_bonus": "Racial Bonus",
+                "special_bonus": "Special Bonus",
+                "stat_bonus": "Stat Bonus"
+            },
+            "attribute": {
+                "agility": "Agility",
+                "agility_short": "Ag",
+                "constitution": "Constitution",
+                "memory": "Memory",
+                "reasoning": "Reasoning",
+                "self_discipline": "Self Discipline",
+                "empathy": "Empathy",
+                "intuition": "Intuition",
+                "presence": "Presence",
+                "quickness": "Quickness",
+                "strength": "Strength",
+                "stat_total": "Total"
+            }
+        },
+        "pc_sheet_tabs": {
+            "record": "Record",
+            "skill_categories": "Skill Categories",
+            "skills": "Skills",
+            "equipment": "Equipment",
+            "status_record": "Status Record",
+            "experience_points": "Experience Points"
+        },
+        "pc_sheet_fixed_info": {
+            "race": "Race:",
+            "profession": "Profession:",
+            "training_packages": "Training Packages:",
+            "realm": "Realm:"
+        },
+        "pc_sheet_armor_info": {
+            "armor_type": "Armor Type:",
+            "mmp": "MMP:",
+            "weight_penalty": "Weight Penalty:",
+            "missile_penalty": "Missile Penalty:",
+            "quickness_penalty": "Quickness Penalty:", 
+            "quickness_bonus": "Quickness Bonus:",
+            "adrenal_defense": "Adrenal Defence:",
+            "shield_bonus": "Shield Bonus:",
+            "magic": "Magic (Spells, Items, etc.):",
+            "total_db": "Total DB:"
+        },
+        "pc_sheet_resistances": {
+            "channeling": "Channeling",
+            "essence": "Essence",
+            "mentalism": "Mentalism",
+            "chann_ess": "Chann/Ess",
+            "chann_ment": "Chann/Ment",
+            "ess_ment": "Ess/Ment",
+            "arcane": "Arcane",
+            "poison_disease": "Poison/Disease",
+            "fear": "Fear"
+        },
+        "pc_sheet_race_stat_fixed_info": {
+            "soul_departure": "Soul Departs in X Rounds:",
+            "recovery_multiplier": "Recovery Multiplier:",
+            "body_dev_progression": "Body Development Progression:",
+            "pp_dev_progression": "PP Development Progression:",
+            "recover_hits_per_hour": "Recover X hits/hour resting:",
+            "recover_hits_per_sleep_cycle": "Recover X hits/sleep cycle:",
+            "recover_pp_per_hour": "Recover X PP/hour resting:",
+            "recover_pp_per_sleep_cycle": "Recover X PP/sleep cycle:"
+        },
+        "pc_sheet_role_traits": {
+            "appearance": "Appearance:",
+            "sex": "Sex:",
+            "skin": "Skin:",
+            "apparent_age": "Apparent Age:",
+            "actual_age": "Actual Age:",
+            "height": "Height:",
+            "weight": "Weight:",
+            "hair": "Hair:",
+            "eyes": "Eyes:",
+            "personality": "Personality:",
+            "motivations": "Motivations:",
+            "alignment": "Alignment:"
+        },
+        "pc_sheet_background_info": {
+            "nationality": "Nationality:",
+            "home_town": "Home Town:",
+            "deity": "Deity:",
+            "patron": "Patron:",
+            "parents": "Parents:",
+            "spouse": "Spouse",
+            "children": "Children:",
+            "other": "Other:"
+        },
+        "pc_sheet_skills": {
+          "favorite": "Favorite?",
+          "skill_name": "Skill Name",
+          "ranks": "# Ranks",
+          "new_ranks": "New Ranks",
+          "rank_bonus": "Rank Bonus",
+          "category_bonus": "Category Bonus",
+          "item_bonus": "Item Bonus",
+          "special_bonus": "Special Bonus",
+          "total_bonus": "Total Bonus",
+          "add_skill": "Add Skill"  
+        },
+        "pc_sheet_skill_categories": {
+            "skillcat_name": "Skill Category Name",
+            "applicable_stats": "Applicable Stats",
+            "dev_cost": "Dev Cost",
+            "ranks": "# Ranks",
+            "new_ranks": "New Ranks",
+            "rank_bonus": "Rank Bonus",
+            "stat_bonus": "Stat Bonus",
+            "prof_bonus": "Prof Bonus",
+            "special_bonus": "Special Bonus",
+            "total_bonus": "Total Bonus",
+            "add_skillcat": "Add Skill Category" 
+        },
+        "pc_sheet_items": {
+            "favorite": "Favorite",
+            "quantity": "Quantity",
+            "item_name": "Item Name",
+            "weight": "Weight",
+            "cost": "Cost",
+            "add_item": "Add Item"
+        },
+        "entity_sheet": {
+            "spell": "RMSS Spell",
+            "weapon": "RMSS Weapon",
+            "item": "RMSS Armor",
+            "armor": "RMSS Item",
+            "herb_or_poison": "RMSS Herb or Poison",
+            "transport": "RMSS Transport",
+            "skill": "RMSS Skill",
+            "skill_category": "RMSS Skill Category",
+            "player_characrer": "RMSS Player Character",
+            "npc": "RMSS NPC",
+            "creature": "RMSS Creature"
+        },
+        "currency_type": {
+            "mp": "Mithril Pieces",
+            "pp": "Platinum Pieces",
+            "gp": "Gold Pieces",
+            "sp": "Silver Pieces",
+            "bp": "Bronze Pieces",
+            "cp": "Copper Pieces"
+        },
+        "item": {
+            "description": "Other Notes",
+            "quantity": "Quantity",
+            "weight": "Weight",
+            "cost": "Cost",
+            "prod_time": "Production Time"
+        },
+        "armor": {
+            "at": "AT",
+            "weight": "Weight",
+            "cost": "Cost",
+            "prod_time": "Production Time"
+        },
+        "weapon": {
+            "cost": "Cost",
+            "type": "Type",
+            "prod_time": "Production Time",
+            "weight": "Weight",
+            "breakage_range": "B#s",
+            "strength": "Str",
+            "fumble_range": "Fumble"            
+        },
+        "herb_or_poison": {
+            "codes": "Codes",
+            "weight": "Weight",
+            "form_and_prep": "Form/Prep",
+            "cost": "Cost",
+            "af": "AF"
+        },
+        "transport": {
+            "cost": "Cost",
+            "feet_per_round": "ft/rnd",
+            "miles_per_hour": "mi/hr",
+            "maneuver": "Man",
+            "height": "Height",
+            "weight": "Weight",
+            "capacity": "Capacity",
+            "offensive_bonus": "OB"
+        },
+        "spell": {
+            "spell_list": "Spell List",
+            "level": "Level",
+            "area_of_effect": "Area of Effect",
+            "duration": "Duration",
+            "range": "Range",
+            "type": "Type",
+            "description": "Description"
+        },
+        "skill_category": {
+            "applicable_stats": "Applicable Stats:",
+            "development_cost" : "Development Cost:",
+            "ranks": "Ranks:",
+            "new_ranks": "New Ranks:",
+            "rank_bonus": "Rank Bonus:",
+            "stat_bonus": "Stat Bonus:",
+            "prof_bonus": "Prof Bonus:",
+            "special_bonus_1": "Special Bonus 1:",
+            "special_bonus_2": "Special Bonus 2:",
+            "total_bonus": "Total Bonus:",
+            "description": "Description:"
+        },
+        "skill": {
+            "favorite": "Favorite?",
+            "ranks": "Ranks:",
+            "new_ranks": "New Ranks:",
+            "rank_bonus": "Rank Bonus:",
+            "category_bonus": "Category Bonus:",
+            "item_bonus": "Item Bonus:",
+            "special_bonus_1": "Special Bonus 1:",
+            "special_bonus_2": "Special Bonus 2:",
+            "total_bonus": "Total Bonus:",
+            "description": "Description:"
+        }
+    }
+}
