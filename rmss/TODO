@@ -1,0 +1,22 @@
+Small
+
+1. Add Relationship between skills and skill categories
+2. Remove Tables and replace with CSS Grid
+3. Fix unaligned CSS
+4. Prevent Duplication on Drag and Drop for Skills and Skill Categories, possibly spells too.
+    DONE - Overriden _onDropItem on Player Sheet
+    DONE - Skill Categories cannot be renamed if they are owned.
+
+Medium 
+
+4. Inventory sorted by types
+    i. Drag and drop should add an item if it already exists.
+    ii. Equipables
+    iii. Favorites
+5. Creature Sheet
+
+Large
+
+6. Dice Roller
+7. Initiative System
+  

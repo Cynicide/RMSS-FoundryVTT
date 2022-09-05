@@ -18,33 +18,33 @@
 
                 </tr>
                 <td>
-                    <input name="data.quantity" type="text" value="{{data.quantity}}" data-dtype="Number"/>
+                    <input name="system.quantity" type="text" value="{{system.quantity}}" data-dtype="Number"/>
                 </td>
                 <td>
-                    <input name="data.cost" type="text" value="{{data.cost}}" data-dtype="String"/>
+                    <input name="system.cost" type="text" value="{{system.cost}}" data-dtype="String"/>
                 </td>
                 <td>
-                    <input name="data.type" type="text" value="{{data.type}}" data-dtype="String"/>
+                    <input name="system.type" type="text" value="{{system.type}}" data-dtype="String"/>
                 </td>                
                 <td>
-                    <input name="data.prod_time" type="text" value="{{data.prod_time}}" data-dtype="String"/>
+                    <input name="system.prod_time" type="text" value="{{system.prod_time}}" data-dtype="String"/>
                 </td>
                 <td>
-                    <input name="data.weight" type="text" value="{{data.weight}}" data-dtype="Number"/>
+                    <input name="system.weight" type="text" value="{{system.weight}}" data-dtype="Number"/>
                 </td>
                 <td>
-                    <input name="data.breakage_range" type="text" value="{{data.breakage_range}}" data-dtype="String"/>
+                    <input name="system.breakage_range" type="text" value="{{system.breakage_range}}" data-dtype="String"/>
                 </td>
                 <td>
-                    <input name="data.strength" type="text" value="{{data.strength}}" data-dtype="Number"/>
+                    <input name="system.strength" type="text" value="{{system.strength}}" data-dtype="String"/>
                 </td>
                 <td>
-                    <input name="data.fumble_range" type="text" value="{{data.fumble_range}}" data-dtype="Number"/>
+                    <input name="system.fumble_range" type="text" value="{{system.fumble_range}}" data-dtype="String"/>
                 </td>
 
             </table>
                 {{localize "rmss.item.description"}}
-                {{editor content=data.description target="data.description" button=true owner=owner editable=editable}}
+                {{editor enrichedDescription target="system.description" button=true owner=owner editable=editable}}
         </div>
     </div>
 </form>

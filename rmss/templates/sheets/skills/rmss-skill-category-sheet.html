@@ -1,25 +1,31 @@
 <form class="{{cssClass}}" autocomplete="off">
     <header class="sheet-header">
         <img src="{{item.img}}" data-edit="img" title="{{item.name}}" height="64" width="64"/>
+        
+        {{#if item.isOwned}}
+        <h1>{{item.name}}</h1>
+        {{else}}
         <h1><input name="name" type="text" value="{{item.name}}" placeholder="{{ localize 'Name' }}"/></h1>
+        {{/if}}
+
     </header>
     <div class="sheet-content">
         <div class="applicable-stats-grid-container">
             <div>
                 Applicable Stat 1
-                <select name="data.app_stat_1" class="app-stat-selector" value="{{data.app_stat_1}}" itemid="{{ item._id }}">
+                <select name="system.app_stat_1" class="app-stat-selector" value="{{system.app_stat_1}}" itemid="{{ item._id }}">
                     {{selectOptions applicable_stat_list selected=applicable_stat_1_selected }}
                 </select>
             </div>
             <div>
                 Applicable Stat 2
-                <select name="data.app_stat_2" class="app-stat-selector" value="{{data.app_stat_2}}" itemid="{{ item._id }}">
+                <select name="system.app_stat_2" class="app-stat-selector" value="{{system.app_stat_2}}" itemid="{{ item._id }}">
                     {{selectOptions applicable_stat_list selected=applicable_stat_2_selected }}
                 </select>
             </div>
             <div>
                 Applicable Stat 2
-                <select name="data.app_stat_3" class="app-stat-selector" value="{{data.app_stat_3}}" itemid="{{ item._id }}">
+                <select name="system.app_stat_3" class="app-stat-selector" value="{{system.app_stat_3}}" itemid="{{ item._id }}">
                     {{selectOptions applicable_stat_list selected=applicable_stat_3_selected }}
                 </select>
             </div>
@@ -39,38 +45,38 @@
                     <th>{{localize "rmss.skill_category.total_bonus"}}</th>
                 </tr>
                 <td>
-                    <input name="data.applicable_stats" type="text" value="{{data.applicable_stats}}" data-dtype="String"/>
+                    <input name="system.applicable_stats" type="text" value="{{system.applicable_stats}}" data-dtype="String"/>
                 </td>
                 <td>
-                    <input name="data.development_cost" type="text" value="{{data.development_cost}}" data-dtype="String"/>
+                    <input name="system.development_cost" type="text" value="{{system.development_cost}}" data-dtype="String"/>
                 </td>
                 <td>
-                    <input name="data.ranks" type="text" value="{{data.ranks}}" data-dtype="Number"/>
+                    <input name="system.ranks" type="text" value="{{system.ranks}}" data-dtype="Number"/>
                 </td>
                 <td>
-                    <input name="data.new_ranks" type="text" value="{{data.new_ranks}}" data-dtype="Number"/>
+                    <input name="system.new_ranks" type="text" value="{{system.new_ranks}}" data-dtype="Number"/>
                 </td>
                 <td>
-                    <input name="data.rank_bonus" type="text" value="{{data.rank_bonus}}" data-dtype="Number"/>
+                    <input name="system.rank_bonus" type="text" value="{{system.rank_bonus}}" data-dtype="Number"/>
                 </td>
                 <td>
-                    <input name="data.stat_bonus" type="text" value="{{data.stat_bonus}}" data-dtype="Number"/>
+                    <input name="system.stat_bonus" type="text" value="{{system.stat_bonus}}" data-dtype="Number"/>
                 </td>
                 <td>
-                    <input name="data.prof_bonus" type="text" value="{{data.prof_bonus}}" data-dtype="Number"/>
+                    <input name="system.prof_bonus" type="text" value="{{system.prof_bonus}}" data-dtype="Number"/>
                 </td>
                 <td>
-                    <input name="data.special_bonus_1" type="text" value="{{data.special_bonus_1}}" data-dtype="Number"/>
+                    <input name="system.special_bonus_1" type="text" value="{{system.special_bonus_1}}" data-dtype="Number"/>
                 </td>
                 <td>
-                    <input name="data.special_bonus_2" type="text" value="{{data.special_bonus_2}}" data-dtype="Number"/>
+                    <input name="system.special_bonus_2" type="text" value="{{system.special_bonus_2}}" data-dtype="Number"/>
                 </td>
                 <td>
-                    <input name="data.total_bonus" type="text" value="{{data.total_bonus}}" data-dtype="Number"/>
+                    <input name="system.total_bonus" type="text" value="{{system.total_bonus}}" data-dtype="Number"/>
                 </td>
             </table>
             {{localize "rmss.skill_category.description"}}
-            {{editor content=data.description target="data.description" button=true owner=owner editable=editable}}
+            {{editor enrichedDescription target="system.description" button=true owner=owner editable=editable}}
         </div>
     </div>
 </form>

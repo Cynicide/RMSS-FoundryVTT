@@ -17,34 +17,34 @@
                     <th>{{localize "rmss.transport.offensive_bonus"}}</th>
                 </tr>
                 <td>
-                    <input name="data.cost" type="text" value="{{data.cost}}" data-dtype="String"/>
+                    <input name="system.cost" type="text" value="{{system.cost}}" data-dtype="String"/>
                 </td>
                 <td>
-                    <input name="data.feet_per_round" type="text" value="{{data.feet_per_round}}" data-dtype="Number"/>
+                    <input name="system.feet_per_round" type="text" value="{{system.feet_per_round}}" data-dtype="Number"/>
                 </td>
                 <td>
-                    <input name="data.miles_per_hour" type="text" value="{{data.miles_per_hour}}" data-dtype="Number"/>
+                    <input name="system.miles_per_hour" type="text" value="{{system.miles_per_hour}}" data-dtype="Number"/>
                 </td>
                 <td>
-                    <input name="data.maneuver" type="text" value="{{data.maneuver}}" data-dtype="Number"/>
+                    <input name="system.maneuver" type="text" value="{{system.maneuver}}" data-dtype="Number"/>
                 </td>
                 <td>
-                    <input name="data.height" type="text" value="{{data.height}}" data-dtype="Number"/>
+                    <input name="system.height" type="text" value="{{system.height}}" data-dtype="Number"/>
                 </td>
                 <td>
-                    <input name="data.weight" type="text" value="{{data.weight}}" data-dtype="Number"/>
+                    <input name="system.weight" type="text" value="{{system.weight}}" data-dtype="Number"/>
                 </td>
                 <td>
-                    <input name="data.capacity" type="text" value="{{data.capacity}}" data-dtype="Number"/>
+                    <input name="system.capacity" type="text" value="{{system.capacity}}" data-dtype="Number"/>
                 </td>
                 <td>
-                    <input name="data.offensive_bonus" type="text" value="{{data.offensive_bonus}}" data-dtype="Number"/>
+                    <input name="system.offensive_bonus" type="text" value="{{system.offensive_bonus}}" data-dtype="Number"/>
                 </td>
 
 
             </table>
                 {{localize "rmss.item.description"}}
-                {{editor content=data.description target="data.description" button=true owner=owner editable=editable}}
+                {{editor enrichedDescription target="system.description" button=true owner=owner editable=editable}}
         </div>
     </div>
 </form>

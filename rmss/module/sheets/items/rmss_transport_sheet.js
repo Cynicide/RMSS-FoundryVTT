@@ -17,15 +17,18 @@ export default class RMSSTransportSheet extends ItemSheet {
     }
 
     // Make the data available to the sheet template
-    getData() {
-        const baseData = super.getData();
+    async getData() {
+        const baseData = await super.getData();
+
+        var enrichedDescription = await TextEditor.enrichHTML(this.item.system.description, {async: true});
 
         let sheetData = {
             owner: this.item.isOwner,
             editable :this.isEditable,
             item: baseData.item,
-            data: baseData.item.data.data,
-            config: CONFIG.rmss
+            system: baseData.item.system,
+            config: CONFIG.rmss,
+            enrichedDescription: enrichedDescription
         };
 
         return sheetData;
