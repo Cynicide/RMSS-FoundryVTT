@@ -15,8 +15,8 @@ import RMSSTransportSheet from "./module/sheets/items/rmss_transport_sheet.js";
 import RMSSWeaponSheet from "./module/sheets/items/rmss_weapon_sheet.js";
 import RMSSHerbOrPoisonSheet from "./module/sheets/items/rmss_herb_or_poison_sheet.js";
 import RMSSSpellSheet from "./module/sheets/spells/rmss_spell_sheet.js";
-import RMSSSkillCategorySheet from "./module/sheets/skills/rmss_skill_category_sheet.js"
-import RMSSSkillSheet from "./module/sheets/skills/rmss_skill_sheet.js"
+import RMSSSkillCategorySheet from "./module/sheets/skills/rmss_skill_category_sheet.js";
+import RMSSSkillSheet from "./module/sheets/skills/rmss_skill_sheet.js";
 
 import RMSSPlayerSheet from "./module/sheets/actors/rmss_player_sheet.js";
 
@@ -37,7 +37,7 @@ async function preloadHandlebarsTemplates() {
         "systems/rmss/templates/sheets/actors/parts/actor-money.html",
         "systems/rmss/templates/sheets/actors/parts/actor-skill-categories-grid.html",
         "systems/rmss/templates/sheets/actors/parts/actor-skills-grid.html" 
-    ]
+    ];
     return loadTemplates(templatePaths);
 }
 

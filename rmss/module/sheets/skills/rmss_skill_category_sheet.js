@@ -17,36 +17,36 @@ export default class RMSSSkillCategorySheet extends ItemSheet {
     }
 
     // Make the data available to the sheet template
-    getData() {
-        const baseData = super.getData();
+    async getData() {
+        const context = await super.getData();
 
         // Get a list of stats that can be used as applicable stats
         var applicable_stat_list = this.prepareApplicableStatValues(CONFIG);
-        
+
         //Get the currently selected value for all three applicable stats
         var applicable_stat_1_selected = this.prepareApplicableSelectedStat("app_stat_1");
         var applicable_stat_2_selected = this.prepareApplicableSelectedStat("app_stat_2");
         var applicable_stat_3_selected = this.prepareApplicableSelectedStat("app_stat_3");
 
-        // Build the string for Applicable Stats
-        var applicable_stat_text = this.buildApplicableStatsText(applicable_stat_1_selected, applicable_stat_2_selected, applicable_stat_3_selected)
-        baseData.item.data.data['applicable_stats'] = applicable_stat_text
+        // Build and apply the display string for Applicable Stats
+        var applicable_stat_text = this.buildApplicableStatsText(applicable_stat_1_selected, applicable_stat_2_selected, applicable_stat_3_selected);
+        //context.item.system['applicable_stats'] = applicable_stat_text;
+        context.item.system.applicable_stats = applicable_stat_text;
 
+        var enrichedDescription = await TextEditor.enrichHTML(this.item.system.description, {async: true});
 
         let sheetData = {
             owner: this.item.isOwner,
             editable :this.isEditable,
-            item: baseData.item,
-            data: baseData.item.data.data,
+            item: context.item,
+            system: context.item.system,
             config: CONFIG.rmss,
             applicable_stat_list: applicable_stat_list,
             applicable_stat_1_selected: applicable_stat_1_selected,
             applicable_stat_2_selected: applicable_stat_2_selected,
-            applicable_stat_3_selected: applicable_stat_3_selected
+            applicable_stat_3_selected: applicable_stat_3_selected,
+            enrichedDescription: enrichedDescription
         };
-
-        console.log(this.item)
-
         return sheetData;
         }
 
@@ -60,19 +60,19 @@ export default class RMSSSkillCategorySheet extends ItemSheet {
         }
 
         prepareApplicableStatValues(CONFIG) {
-            var applicable_stat_1_list = {None: "None"}
+            var applicable_stat_list = {None: "None"};
 
             // Get a list of stat shortnames from the config
             for (const item in CONFIG.rmss.stats) {
-                applicable_stat_1_list[CONFIG.rmss.stats[item]['shortname']] = CONFIG.rmss.stats[item]['shortname'];
+                applicable_stat_list[CONFIG.rmss.stats[item].shortname] = CONFIG.rmss.stats[item].shortname;
             }
-            return applicable_stat_1_list;
+            return applicable_stat_list;
         }
 
         // Determine which Stat is selected for applicable stats
         prepareApplicableSelectedStat(app_stat) {
             var applicable_stat_selected = "";
-            applicable_stat_selected = this.item.data.data[app_stat];
+            applicable_stat_selected = this.item.system[app_stat];
             return applicable_stat_selected;
         }
 
@@ -80,19 +80,19 @@ export default class RMSSSkillCategorySheet extends ItemSheet {
         buildApplicableStatsText(app_stat_1, app_stat_2, app_stat_3) {
 
             if (app_stat_1 === "None") {
-                return("None")
+                return("None");
             }
             else if (app_stat_1 !== "None" && app_stat_2 === "None") {
-                return(app_stat_1)
+                return(app_stat_1);
             }
             else if (app_stat_1 !== "None" && app_stat_2 !== "None" && app_stat_3 === "None" ) {
-                return(app_stat_1 + "/" + app_stat_2 )
+                return(app_stat_1 + "/" + app_stat_2 );
             }
             else if (app_stat_1 !== "None" && app_stat_2 !== "None" && app_stat_3 !== "None" ) {
-                return(app_stat_1 + "/" + app_stat_2 + "/" + app_stat_3 )
+                return(app_stat_1 + "/" + app_stat_2 + "/" + app_stat_3 );
             }
             else {
-                return("None")
+                return("None");
             }
         }   
 

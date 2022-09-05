@@ -14,10 +14,10 @@ export default class RMSSPlayerSheet extends ActorSheet {
         const context = super.getData();
         
         // Use a safe clone of the actor data for further operations.
-        const actorData = this.actor.data.toObject(false);
+        const actorData = this.actor.toObject(false);
 
         // Add the actor's data to context.data for easier access, as well as flags.
-        context.data = actorData.data;
+        context.system = actorData.system;
         context.flags = actorData.flags;
         
         // Prepare character data and items.
@@ -29,11 +29,38 @@ export default class RMSSPlayerSheet extends ActorSheet {
         // Prepare NPC data and items.
         if (actorData.type == 'npc') {
             this._prepareItems(context);
-        }
-        
+        }       
         return context;
     }
     
+    //Override this method to check for duplicates when things are dragged to the sheet
+    // We don't want duplicate skills and skill categories.
+    async _onDropItem(event, data) {
+        
+        // Reconstruct the item from the event
+        const newitem = await Item.implementation.fromDropData(data);
+        const itemData = newitem.toObject();
+        
+        if (itemData.type === "skill_category" || itemData.type === "skill"){
+
+            // Get the already owned Items from the actor and push into an array
+            const owneditems = this.object.getOwnedSkillCategories();
+            
+            console.log(owneditems);
+
+            var owneditemslist = Object.values(owneditems);
+         
+            // Check if the dragged item is not in the array and not owned
+            if (!owneditemslist.includes(itemData.name)) {
+                console.log("Not Owned!");
+                super._onDropItem(event, data);
+           }
+        }
+        else {
+            super._onDropItem(event, data);
+        }
+    }
+
     _prepareCharacterData(context) {    
     }
     
@@ -96,7 +123,7 @@ export default class RMSSPlayerSheet extends ActorSheet {
         // Render the item sheet for viewing/editing prior to the editable check.
         html.find('.item-edit').click(ev => {
             const item = this.actor.items.get(ev.currentTarget.getAttribute("data-item-id"));
-            console.log(this);
+            //console.log(this);
             item.sheet.render(true);
         });
         
@@ -110,7 +137,7 @@ export default class RMSSPlayerSheet extends ActorSheet {
         // Delete Item
         html.find('.item-delete').click(ev => {
             const item = this.actor.items.get(ev.currentTarget.getAttribute("data-item-id"));
-            console.log(ev.currentTarget.getAttribute("data-item-id"));
+            //console.log(ev.currentTarget.getAttribute("data-item-id"));
             item.delete();
         });
     }
@@ -131,8 +158,8 @@ export default class RMSSPlayerSheet extends ActorSheet {
             data: data
         };
         // Remove the type from the dataset since it's in the itemData.type prop.
-        delete itemData.data["type"];
-        
+        //delete itemData.data["type"];
+        delete itemData.data.type;
         // Finally, create the item!
         return await Item.create(itemData, {parent: this.actor});
     }

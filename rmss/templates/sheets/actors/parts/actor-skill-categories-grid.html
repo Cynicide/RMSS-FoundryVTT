@@ -15,16 +15,16 @@
     </div>
   {{#each skillcat as |skill_category id|}}
       <div>{{skill_category.name}}</div>
-      <div>{{skill_category.data.applicable_stats}}</div>
-      <div>{{skill_category.data.development_cost}}</div>
-      <div>{{skill_category.data.ranks}}</div>
-      <div>{{skill_category.data.new_ranks}}</div>
-      <div>{{skill_category.data.rank_bonus}}</div>
-      <div>{{skill_category.data.stat_bonus}}</div>
-      <div>{{skill_category.data.prof_bonus}}</div>
-      <div>{{skill_category.data.special_bonus_1}}</div>
-      <div>{{skill_category.data.special_bonus_2}}</div>
-      <div>{{skill_category.data.total_bonus}}</div>
+      <div>{{skill_category.system.applicable_stats}}</div>
+      <div>{{skill_category.system.development_cost}}</div>
+      <div>{{skill_category.system.ranks}}</div>
+      <div>{{skill_category.system.new_ranks}}</div>
+      <div>{{skill_category.system.rank_bonus}}</div>
+      <div>{{skill_category.system.stat_bonus}}</div>
+      <div>{{skill_category.system.prof_bonus}}</div>
+      <div>{{skill_category.system.special_bonus_1}}</div>
+      <div>{{skill_category.system.special_bonus_2}}</div>
+      <div>{{skill_category.system.total_bonus}}</div>
       <div>
         <a class="item-edit" title="Edit Category" data-item-id="{{skill_category._id}}"><i class="fas fa-edit"></i></a>
         <a class="item-delete item" title="Delete Category" data-item-id="{{skill_category._id}}"><i class="fas fa-trash"></i></a>

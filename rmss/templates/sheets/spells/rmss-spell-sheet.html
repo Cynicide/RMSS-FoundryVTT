@@ -16,27 +16,27 @@
 
                 </tr>
                 <td>
-                    <input name="data.spell_list" type="text" value="{{data.spell_list}}" data-dtype="String"/>
+                    <input name="system.spell_list" type="text" value="{{system.spell_list}}" data-dtype="String"/>
                 </td>
                 <td>
-                    <input name="data.level" type="text" value="{{data.level}}" data-dtype="Number"/>
+                    <input name="system.level" type="text" value="{{system.level}}" data-dtype="Number"/>
                 </td>
                 <td>
-                    <input name="data.area_of_effect" type="text" value="{{data.area_of_effect}}" data-dtype="String"/>
+                    <input name="system.area_of_effect" type="text" value="{{system.area_of_effect}}" data-dtype="String"/>
                 </td>                
                 <td>
-                    <input name="data.duration" type="text" value="{{data.duration}}" data-dtype="String"/>
+                    <input name="system.duration" type="text" value="{{system.duration}}" data-dtype="String"/>
                 </td>
                 <td>
-                    <input name="data.range" type="text" value="{{data.range}}" data-dtype="Number"/>
+                    <input name="system.range" type="text" value="{{system.range}}" data-dtype="Number"/>
                 </td>
                 <td>
-                    <input name="data.type" type="text" value="{{data.type}}" data-dtype="String"/>
+                    <input name="system.type" type="text" value="{{system.type}}" data-dtype="String"/>
                 </td>
 
             </table>
                 {{localize "rmss.spell.description"}}
-                {{editor content=data.description target="data.description" button=true owner=owner editable=editable}}
+                {{editor enrichedDescription target="system.description" button=true owner=owner editable=editable}}
         </div>
     </div>
 </form>

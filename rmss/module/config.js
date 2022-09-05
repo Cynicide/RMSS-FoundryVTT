@@ -50,6 +50,4 @@ rmss.stats = {
         fullname: "Strength",
         shortname: "St"
     }
-
-
 }

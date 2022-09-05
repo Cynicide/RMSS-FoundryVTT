@@ -9,45 +9,47 @@ export class RMSSItem extends Item {
         super.prepareData();
     }
 
-    // Set the images for newly created images (need to fix for copied images).
+    // Set the icon images for newly created images.
     async _preCreate(data, options, userId) {
         await super._preCreate(data, options, userId);
-        if (!data.img) {
-            if (this.data.type == "armor") {
-                await this.data.update({img: "systems/rmss/assets/default/armor.svg"});
+        
+        // Do not set on copied items if they have a custom Icon.
+        if (!data.name.includes("(Copy)"))
+        {
+            if (this.type == "armor") {
+                await this.updateSource({img: "systems/rmss/assets/default/armor.svg"});
             }
-            else if (this.data.type == "weapon") {
-                await this.data.update({img: "systems/rmss/assets/default/weapon.svg"});
+            else if (this.type == "weapon") {
+                await this.updateSource({img: "systems/rmss/assets/default/weapon.svg"});
             }
-            else if (this.data.type == "skill") {
-                await this.data.update({img: "systems/rmss/assets/default/skill.svg"});
+            else if (this.type == "skill") {
+                await this.updateSource({img: "systems/rmss/assets/default/skill.svg"});
             }
-            else if (this.data.type == "skill_category") {
-                await this.data.update({img: "systems/rmss/assets/default/skill_category.svg"});
+            else if (this.type == "skill_category") {
+                await this.updateSource({img: "systems/rmss/assets/default/skill_category.svg"});
             }
-            else if (this.data.type == "spell") {
-                await this.data.update({img: "systems/rmss/assets/default/spell.svg"});
+            else if (this.type == "spell") {
+                await this.updateSource({img: "systems/rmss/assets/default/spell.svg"});
             }
-            else if (this.data.type == "herb_or_poison") {
-                await this.data.update({img: "systems/rmss/assets/default/herb_or_poison.svg"});
+            else if (this.type == "herb_or_poison") {
+                await this.updateSource({img: "systems/rmss/assets/default/herb_or_poison.svg"});
             }
-            else if (this.data.type == "transport") {
-                await this.data.update({img: "systems/rmss/assets/default/transport.svg"});
+            else if (this.type == "transport") {
+                await this.updateSource({img: "systems/rmss/assets/default/transport.svg"});
             }
         }
     }
-    
-    calculateSkillCatTotalBonus(itemData) {
-         // Calculate Stat Bonuses
-         
-         const data = itemData.data;
 
-         itemData.data.total_bonus = Number(data.rank_bonus)+Number(data.stat_bonus)+Number(data.prof_bonus)+Number(data.special_bonus_1)+Number(data.special_bonus_2);
+    calculateSkillCategoryTotalBonus(itemData) {
+        if (this.type === "skill_category") {
+            const systemData = itemData.system;
+            itemData.system.total_bonus = Number(systemData.rank_bonus)+Number(systemData.stat_bonus)+Number(systemData.prof_bonus)+Number(systemData.special_bonus_1)+Number(systemData.special_bonus_2);   
+        } 
     }
 
     prepareDerivedData() {
-        const itemData = this.data;
-        const data = itemData.data;
+        const itemData = this;
+        const systemData = itemData.system;
         const flags = itemData.flags.rmss || {};
     
         // Make separate methods for each item type to keep things organized.
@@ -62,16 +64,16 @@ export class RMSSItem extends Item {
         //const data = itemData.data;
     
         // Calculate Stat Bonuses        
-        this.calculateSkillCatTotalBonus(itemData);
+        this.calculateSkillCategoryTotalBonus(itemData);
     }
 
     _prepareSkillData(itemData) {
         if (itemData.type !== 'skill') return;
 
         // Make modifications to data here. For example:
-        const data = itemData.data;
+        const systemData = itemData.system;
 
         // Calculate Stat Bonuses
-        itemData.data.total_bonus = Number(data.rank_bonus)+Number(data.category_bonus)+Number(data.item_bonus)+Number(data.special_bonus_1)+Number(data.special_bonus_2);
+        itemData.system.total_bonus = Number(systemData.rank_bonus)+Number(systemData.category_bonus)+Number(systemData.item_bonus)+Number(systemData.special_bonus_1)+Number(systemData.special_bonus_2);
     }
 }

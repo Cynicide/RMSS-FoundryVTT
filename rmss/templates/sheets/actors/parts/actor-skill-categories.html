@@ -16,16 +16,16 @@
   {{#each skillcat as |skill_category id|}}
     <tr class="item" data-item-id="{{skill_category._id}}">
       <td><div class="table-font table-bold">{{skill_category.name}}</div></td>
-      <td><div class="table-font">{{skill_category.data.applicable_stats}}</div></td>
-      <td><div class="table-font">{{skill_category.data.development_cost}}</div></td>
-      <td><div class="table-font">{{skill_category.data.ranks}}</div></td>
-      <td><div class="table-font">{{skill_category.data.new_ranks}}</div></td>
-      <td><div class="table-font">{{skill_category.data.rank_bonus}}</div></td>
-      <td><div class="table-font">{{skill_category.data.stat_bonus}}</div></td>
-      <td><div class="table-font">{{skill_category.data.prof_bonus}}</div></td>
-      <td><div class="table-font">{{skill_category.data.special_bonus_1}}</div></td>
-      <td><div class="table-font">{{skill_category.data.special_bonus_2}}</div></td>
-      <td><div class="table-font">{{skill_category.data.total_bonus}}</div></td>
+      <td><div class="table-font">{{skill_category.system.applicable_stats}}</div></td>
+      <td><div class="table-font">{{skill_category.system.development_cost}}</div></td>
+      <td><div class="table-font">{{skill_category.system.ranks}}</div></td>
+      <td><div class="table-font">{{skill_category.system.new_ranks}}</div></td>
+      <td><div class="table-font">{{skill_category.system.rank_bonus}}</div></td>
+      <td><div class="table-font">{{skill_category.system.stat_bonus}}</div></td>
+      <td><div class="table-font">{{skill_category.system.prof_bonus}}</div></td>
+      <td><div class="table-font">{{skill_category.system.special_bonus_1}}</div></td>
+      <td><div class="table-font">{{skill_category.system.special_bonus_2}}</div></td>
+      <td><div class="table-font">{{skill_category.system.total_bonus}}</div></td>
       <td><div class="table-controls">
         <a class="item-edit" title="Edit Category"><i class="fas fa-edit"></i></a>
         <a class="item-delete" title="Delete Category"><i class="fas fa-trash"></i></a>
