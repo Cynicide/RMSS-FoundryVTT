@@ -27,14 +27,16 @@ export class RMSSActor extends Actor {
     if (actorData.type !== 'character') return;
     
     // Calculate Stat Bonuses for the Actor
-    this.prepareStatBonuses(actorData);
+    this.calculateStatBonuses(actorData);
     
     // Calculate Resistance Rolls for the Actor
-    this.prepareResistanceRolls(actorData);
+    this.calculateResistanceRolls(actorData);
     
     // Iterate through and apply Stat bonuses for Skill Category Items
-    this.prepareSkillCategoryStatBonuses();
-  
+    this.calculateSkillCategoryStatBonuses();
+
+    // Iterate through and apply Skill Category Bonuses for Skill items
+    this.calculateSkillBonuses();
   }
   
   /**
@@ -45,11 +47,10 @@ export class RMSSActor extends Actor {
     
     // Make modifications to data here. For example:
     const data = actorData.data;
-    data.xp = (data.cr * data.cr) * 100;
   }
   
   // Tally each stat bonus and populate the total field. 
-  prepareStatBonuses(actorData) {
+  calculateStatBonuses(actorData) {
     const systemData = actorData.system;
     actorData.system.stats.agility.stat_bonus = Number(systemData.stats.agility.racial_bonus)+Number(systemData.stats.agility.special_bonus)+Number(systemData.stats.agility.basic_bonus);
     actorData.system.stats.constitution.stat_bonus = Number(systemData.stats.constitution.racial_bonus)+Number(systemData.stats.constitution.special_bonus)+Number(systemData.stats.constitution.basic_bonus);
@@ -64,7 +65,7 @@ export class RMSSActor extends Actor {
   }
 
   // Calculate each Resistance Roll with the formula on the character sheet. 
-  prepareResistanceRolls(actorData) { // TODO: Add Racial modifiers to resistance
+  calculateResistanceRolls(actorData) { // TODO: Add Racial modifiers to resistance
     const systemData = actorData.system;
     actorData.system.resistance_rolls.essence = Number(systemData.stats.empathy.stat_bonus * 3);
     actorData.system.resistance_rolls.channeling = Number(systemData.stats.intuition.stat_bonus * 3);
@@ -77,19 +78,24 @@ export class RMSSActor extends Actor {
     actorData.system.resistance_rolls.arcane = Number(systemData.stats.empathy.stat_bonus) + Number(systemData.stats.intuition.stat_bonus) + Number(systemData.stats.presence.stat_bonus);
   }
 
-  /*prepareSkillCategoryBonuses() {
+  calculateSkillBonuses() {
     for (const item of this.items) {
       if (item.type === "skill") {
-        
+        console.log("rmss | actor.js | Calculating skill bonus for Skill: " + item.name);
+        console.log("rmss | actor.js | Updating Skill Category Bonus for Skill: " + item.name);
+        item.calculateSelectedSkillCategoryBonus(item);
+        console.log("rmss | actor.js | Updating Skill Total Bonus for Skill: " + item.name);
+        item.calculateSkillTotalBonus(item);
       }
     }
-  }*/
+  }
 
   // Tallys the bonus for each Stat that is applicable to the Skill Category and then updates the total
-  prepareSkillCategoryStatBonuses() {
+  calculateSkillCategoryStatBonuses() {
     for (const item of this.items) {
       if (item.type === "skill_category") {
         
+        console.log("rmss | actor.js | Calculating Skill Category Stat Bonuses for: " + item.name);
         // Get all the applicable stats for this skill category 
         var app_stat_1 = item.system.app_stat_1;
         var app_stat_2 = item.system.app_stat_2;
@@ -142,11 +148,24 @@ export class RMSSActor extends Actor {
   // This is the format that the select helper on the skill sheet needs
   getOwnedSkillCategories() {
     var ownedSkillCategories = {None: "None"};
-        for (const item of this.items) {
+      console.log("rmss | actor.js | Getting owned skill categories for: " + this.name);
+      for (const item of this.items) {
       if (item.type === "skill_category") {
         ownedSkillCategories[item._id] = item.name;
       }
     }
     return(ownedSkillCategories);
   }
+
+  getOwnedSkills() {
+    var ownedSkills = {None: "None"};
+      console.log("rmss | actor.js | Getting owned skills for: " + this.name);
+      for (const item of this.items) {
+      if (item.type === "skill") {
+        ownedSkills[item._id] = item.name;
+      }
+    }
+    return(ownedSkills);
+  }
+
 }

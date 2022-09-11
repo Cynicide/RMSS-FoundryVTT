@@ -1,22 +1,26 @@
 Small
 
-1. Add Relationship between skills and skill categories
+1. DONE - Add Relationship between skills and skill categories
 2. Remove Tables and replace with CSS Grid
 3. Fix unaligned CSS
 4. Prevent Duplication on Drag and Drop for Skills and Skill Categories, possibly spells too.
     DONE - Overriden _onDropItem on Player Sheet
     DONE - Skill Categories cannot be renamed if they are owned.
+    DONE - Skills and Skill Categories are now seperate checks for Drag and Drop as some share names
+    Spells ?
+5. Fix New Ranks Clickboxes - https://discord.com/channels/170995199584108546/670336275496042502/1018530650980102195
+6. Fix Favorites Clickboxes on Actor Page
 
 Medium 
 
 4. Inventory sorted by types
-    i. Drag and drop should add an item if it already exists.
+    i. Drag and drop should increment an item if it already exists.
     ii. Equipables
     iii. Favorites
 5. Creature Sheet
+6. Finish Character Sheet
 
 Large
 
 6. Dice Roller
 7. Initiative System
-  
