@@ -41,7 +41,8 @@ export default class RMSSPlayerSheet extends ActorSheet {
         const newitem = await Item.implementation.fromDropData(data);
         const itemData = newitem.toObject();
         
-        if (itemData.type === "skill_category" || itemData.type === "skill"){
+        // To Do: Seperate Skills and Skill Categories. Increment Counts for items
+        if (itemData.type === "skill_category"){
 
             // Get the already owned Items from the actor and push into an array
             const owneditems = this.object.getOwnedSkillCategories();
@@ -55,6 +56,19 @@ export default class RMSSPlayerSheet extends ActorSheet {
                 console.log("Not Owned!");
                 super._onDropItem(event, data);
            }
+        } else if ( itemData.type === "skill") {
+            // Get the already owned Items from the actor and push into an array
+            const owneditems = this.object.getOwnedSkills();
+                        
+            console.log(owneditems);
+
+            var owneditemslist = Object.values(owneditems);
+
+            // Check if the dragged item is not in the array and not owned
+            if (!owneditemslist.includes(itemData.name)) {
+                console.log("Not Owned!");
+                super._onDropItem(event, data);
+            }
         }
         else {
             super._onDropItem(event, data);
@@ -65,6 +79,7 @@ export default class RMSSPlayerSheet extends ActorSheet {
     }
     
     _prepareItems(context) {
+        console.log("rmss | rmss_player_sheet.js | Preparing items for: "+ this.name);
         // Initialize containers.
         const gear = [];
         const playerskill= [];
@@ -145,12 +160,16 @@ export default class RMSSPlayerSheet extends ActorSheet {
     async _onItemCreate(event) {
         event.preventDefault();
         const header = event.currentTarget;
+        
         // Get the type of item to create.
         const type = header.dataset.type;
+        
         // Grab any data associated with this control.
         const data = duplicate(header.dataset);
+        
         // Initialize a default name.
         const name = `New ${type.capitalize()}`;
+        
         // Prepare the item object.
         const itemData = {
             name: name,
@@ -158,7 +177,6 @@ export default class RMSSPlayerSheet extends ActorSheet {
             data: data
         };
         // Remove the type from the dataset since it's in the itemData.type prop.
-        //delete itemData.data["type"];
         delete itemData.data.type;
         // Finally, create the item!
         return await Item.create(itemData, {parent: this.actor});

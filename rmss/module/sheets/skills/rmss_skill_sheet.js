@@ -28,7 +28,7 @@ export default class RMSSSkillSheet extends ItemSheet {
         // Figure out if a valid Skill Category is already selected
         var selected_skillcat = this.prepareSelectedSkillCategory(owned_skillcats, this.object.system.category);
 
-        this.prepareSelectedSkillCategoryBonus(selected_skillcat);
+        //this.prepareSelectedSkillCategoryBonus(selected_skillcat);
 
         let sheetData = {
             owner: this.item.isOwner,
@@ -82,6 +82,7 @@ export default class RMSSSkillSheet extends ItemSheet {
 
             for (const item of items) {
                 if (item.type === "skill_category" && item._id === selected_skillcat) {
+                    console.log("rmss | rmss_skill_sheet | Calculating Skill Category bonus for skill: " + this.object.name);
                     this.object.system.category_bonus = item.system.total_bonus;
                 }
             }
