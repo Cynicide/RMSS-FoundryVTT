@@ -21,7 +21,10 @@ export default class RMSSSkillSheet extends ItemSheet {
         const baseData = await super.getData();
 
         var enrichedDescription = await TextEditor.enrichHTML(this.item.system.description, {async: true});
-        
+
+        // Get a list of stats that can be used as applicable stats
+        var designations = this.getSkillDesignations(CONFIG);
+
         // Get a list of the parent item's skill categories for the dropdown
         var owned_skillcats = this.prepareSkillCategoryValues();
 
@@ -38,7 +41,8 @@ export default class RMSSSkillSheet extends ItemSheet {
             config: CONFIG.rmss,
             owned_skillcats: owned_skillcats,
             enrichedDescription: enrichedDescription,
-            selected_skillcat: selected_skillcat
+            selected_skillcat: selected_skillcat,
+            designations: designations
         };
 
         return sheetData;
@@ -56,6 +60,16 @@ export default class RMSSSkillSheet extends ItemSheet {
             const skillcats = this.item.parent.getOwnedSkillCategories();
             return(skillcats);
         }
+    }
+
+    getSkillDesignations(CONFIG) {
+        var designations = {};
+
+        // Get a list of designations from the config
+        for (const item in CONFIG.rmss.skill_designations) {
+            designations[CONFIG.rmss.skill_designations[item]] = CONFIG.rmss.skill_designations[item];
+        }
+        return designations;
     }
 
     // Determine which Stat is selected and test that it is in the current list of categories.

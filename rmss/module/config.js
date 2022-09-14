@@ -50,4 +50,11 @@ rmss.stats = {
         fullname: "Strength",
         shortname: "St"
     }
-}
+};
+
+rmss.skill_designations = {
+    none: "None",
+    occupational: "Occupational",
+    everyman: "Everyman", 
+    restricted: "Restricted"
+};

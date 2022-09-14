@@ -1,35 +1,33 @@
-<table>
-    <th><div class="table-font table-bold table-center">{{ localize "rmss.pc_sheet_skill_categories.skillcat_name" }}</div></th>
-    <th><div class="table-font table-bold table-center">{{ localize "rmss.pc_sheet_skill_categories.applicable_stats" }}</div></th>
-    <th><div class="table-font table-bold table-center">{{ localize "rmss.pc_sheet_skill_categories.dev_cost" }}</div></th>
-    <th><div class="table-font table-bold table-center">{{ localize "rmss.pc_sheet_skill_categories.ranks" }}</div></th>
-    <th><div class="table-font table-bold table-center">{{ localize "rmss.pc_sheet_skill_categories.new_ranks" }}</div></th>
-    <th><div class="table-font table-bold table-center">{{ localize "rmss.pc_sheet_skill_categories.rank_bonus" }}</div></th>
-    <th><div class="table-font table-bold table-center">{{ localize "rmss.pc_sheet_skill_categories.stat_bonus" }}</div></th>
-    <th><div class="table-font table-bold table-center">{{ localize "rmss.pc_sheet_skill_categories.prof_bonus" }}</div></th>
-    <th><div class="table-font table-bold table-center">{{ localize "rmss.pc_sheet_skill_categories.special_bonus" }}</div></th>
-    <th><div class="table-font table-bold table-center">{{ localize "rmss.pc_sheet_skill_categories.special_bonus" }}</div></th>
-    <th><div class="table-font table-bold table-center">{{ localize "rmss.pc_sheet_skill_categories.total_bonus" }}</div></th>
-    <th><div class="table-controls">
-      <a class="item-create" title="Create Skill Category" data-type="skill_category"><i class="fas fa-plus"></i>{{ localize "rmss.pc_sheet_skill_categories.add_skillcat" }}</a>
-    </div></th>
+<div class="skillcat-grid-container">
+    <div class="skillcat-grid-heading">{{ localize "rmss.pc_sheet_skill_categories.skillcat_name" }}</div>
+    <div class="skillcat-grid-heading">{{ localize "rmss.pc_sheet_skill_categories.applicable_stats" }}</div>
+    <div class="skillcat-grid-heading">{{ localize "rmss.pc_sheet_skill_categories.dev_cost" }}</div>
+    <div class="skillcat-grid-heading">{{ localize "rmss.pc_sheet_skill_categories.ranks" }}</div>
+    <div class="skillcat-grid-heading">{{ localize "rmss.pc_sheet_skill_categories.new_ranks" }}</div>
+    <div class="skillcat-grid-heading">{{ localize "rmss.pc_sheet_skill_categories.rank_bonus" }}</div>
+    <div class="skillcat-grid-heading">{{ localize "rmss.pc_sheet_skill_categories.stat_bonus" }}</div>
+    <div class="skillcat-grid-heading">{{ localize "rmss.pc_sheet_skill_categories.prof_bonus" }}</div>
+    <div class="skillcat-grid-heading">{{ localize "rmss.pc_sheet_skill_categories.special_bonus" }}</div>
+    <div class="skillcat-grid-heading">{{ localize "rmss.pc_sheet_skill_categories.special_bonus" }}</div>
+    <div class="skillcat-grid-heading">{{ localize "rmss.pc_sheet_skill_categories.total_bonus" }}</div>
+    <div class="skillcat-grid-heading">
+     <!-- <a class="item-create" title="Create Skill Category" data-type="skill_category"><i class="fas fa-plus"></i>{{ localize "rmss.pc_sheet_skill_categories.add_skillcat" }}</a>-->
+    </div>
   {{#each skillcat as |skill_category id|}}
-    <tr class="item" data-item-id="{{skill_category._id}}">
-      <td><div class="table-font table-bold">{{skill_category.name}}</div></td>
-      <td><div class="table-font">{{skill_category.system.applicable_stats}}</div></td>
-      <td><div class="table-font">{{skill_category.system.development_cost}}</div></td>
-      <td><div class="table-font">{{skill_category.system.ranks}}</div></td>
-      <td><div class="table-font">{{skill_category.system.new_ranks}}</div></td>
-      <td><div class="table-font">{{skill_category.system.rank_bonus}}</div></td>
-      <td><div class="table-font">{{skill_category.system.stat_bonus}}</div></td>
-      <td><div class="table-font">{{skill_category.system.prof_bonus}}</div></td>
-      <td><div class="table-font">{{skill_category.system.special_bonus_1}}</div></td>
-      <td><div class="table-font">{{skill_category.system.special_bonus_2}}</div></td>
-      <td><div class="table-font">{{skill_category.system.total_bonus}}</div></td>
-      <td><div class="table-controls">
-        <a class="item-edit" title="Edit Category"><i class="fas fa-edit"></i></a>
-        <a class="item-delete" title="Delete Category"><i class="fas fa-trash"></i></a>
-      </div></td>
-    </tr>
+      <div>{{skill_category.name}}</div>
+      <div>{{skill_category.system.applicable_stats}}</div>
+      <div>{{skill_category.system.development_cost}}</div>
+      <div>{{skill_category.system.ranks}}</div>
+      <div>{{skill_category.system.new_ranks}}</div>
+      <div>{{skill_category.system.rank_bonus}}</div>
+      <div>{{skill_category.system.stat_bonus}}</div>
+      <div>{{skill_category.system.prof_bonus}}</div>
+      <div>{{skill_category.system.special_bonus_1}}</div>
+      <div>{{skill_category.system.special_bonus_2}}</div>
+      <div>{{skill_category.system.total_bonus}}</div>
+      <div>
+        <a class="item-edit" title="Edit Category" data-item-id="{{skill_category._id}}"><i class="fas fa-edit"></i></a>
+        <a class="item-delete item" title="Delete Category" data-item-id="{{skill_category._id}}"><i class="fas fa-trash"></i></a>
+      </div>    
   {{/each}}
-</table>
+</div>

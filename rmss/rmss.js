@@ -35,8 +35,8 @@ async function preloadHandlebarsTemplates() {
         "systems/rmss/templates/sheets/actors/parts/actor-fav-skills.html",
         "systems/rmss/templates/sheets/actors/parts/actor-items.html",
         "systems/rmss/templates/sheets/actors/parts/actor-money.html",
-        "systems/rmss/templates/sheets/actors/parts/actor-skill-categories-grid.html",
-        "systems/rmss/templates/sheets/actors/parts/actor-skills-grid.html" 
+        "systems/rmss/templates/sheets/actors/parts/actor-skill-categories.html",
+        "systems/rmss/templates/sheets/actors/parts/actor-skills.html" 
     ];
     return loadTemplates(templatePaths);
 }
