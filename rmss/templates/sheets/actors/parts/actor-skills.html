@@ -1,35 +1,36 @@
-<table>
-    <th><div class="skill-name skill-headeritem">{{ localize "rmss.pc_sheet_skills.favorite" }}</div></th>
-    <th><div class="skill-name skill-headeritem">{{ localize "rmss.pc_sheet_skills.skill_name" }}</div></th>
-    <th><div class="skill-entry skill-headeritem">{{ localize "rmss.pc_sheet_skills.ranks" }}</div></th>
-    <th><div class="skill-entry skill-headeritem">{{ localize "rmss.pc_sheet_skills.new_ranks" }}</div></th>
-    <th><div class="skill-entry skill-headeritem">{{ localize "rmss.pc_sheet_skills.rank_bonus" }}</div></th>
-    <th><div class="skill-entry skill-headeritem">{{ localize "rmss.pc_sheet_skills.category_bonus" }}</div></th>
-    <th><div class="skill-entry skill-headeritem">{{ localize "rmss.pc_sheet_skills.item_bonus" }}</div></th>
-    <th><div class="skill-entry skill-headeritem">{{ localize "rmss.pc_sheet_skills.special_bonus" }}</div></th>
-    <th><div class="skill-entry skill-headeritem">{{ localize "rmss.pc_sheet_skills.special_bonus" }}</div></th>
-    <th><div class="skill-entry skill-headeritem">{{ localize "rmss.pc_sheet_skills.total_bonus" }}</div></th>
-    <th><div class="skill-controls">
-      <a class="skill-control item-create" title="Create Skill" data-type="skill"><i class="fas fa-plus"></i>{{ localize "rmss.pc_sheet_skills.add_skill" }}</a>
-    </div></th>
+<div class="skills-grid-container">
+    <div class="skills-grid-heading">{{ localize "rmss.pc_sheet_skills.favorite" }}</div>
+    <div class="skills-grid-heading">{{ localize "rmss.pc_sheet_skills.skill_name" }}</div>
+    <div class="skills-grid-heading">{{ localize "rmss.pc_sheet_skills.ranks" }}</div>
+    <div class="skills-grid-heading">{{ localize "rmss.pc_sheet_skills.new_ranks" }}</div>
+    <div class="skills-grid-heading">{{ localize "rmss.pc_sheet_skills.rank_bonus" }}</div>
+    <div class="skills-grid-heading">{{ localize "rmss.pc_sheet_skills.category_bonus" }}</div>
+    <div class="skills-grid-heading">{{ localize "rmss.pc_sheet_skills.item_bonus" }}</div>
+    <div class="skills-grid-heading">{{ localize "rmss.pc_sheet_skills.special_bonus" }}</div>
+    <div class="skills-grid-heading">{{ localize "rmss.pc_sheet_skills.special_bonus" }}</div>
+    <div class="skills-grid-heading">{{ localize "rmss.pc_sheet_skills.total_bonus" }}</div>
+    <div class="skills-grid-heading">
+      <!--<a class="item-create" title="Create Skill" data-type="skill"><i class="fas fa-plus"></i>{{ localize "rmss.pc_sheet_skills.add_skill" }}</a>-->
+    </div>
   {{#each playerskill as |skill id|}}
-    <tr class="item" data-item-id="{{skill._id}}">
-      <td><div class="skill-entry item-prop"><input type="checkbox" name="system.favorite" {{checked skill.system.favorite}}/></div></td>
-      <td><div class="skill-name">
-        <h4>{{skill.name}}</h4>
-      </div></td>
-      <td><div class="skill-entry item-prop">{{skill.system.ranks}}</div></td>
-      <td><div class="skill-entry item-prop">{{skill.system.new_ranks}}</div></td>
-      <td><div class="skill-entry item-prop">{{skill.system.rank_bonus}}</div></td>
-      <td><div class="skill-entry item-prop">{{skill.system.category_bonus}}</div></td>
-      <td><div class="skill-entry item-prop">{{skill.system.item_bonus}}</div></td>
-      <td><div class="skill-entry item-prop">{{skill.system.special_bonus_1}}</div></td>
-      <td><div class="skill-entry item-prop">{{skill.system.special_bonus_2}}</div></td>
-      <td><div class="skill-entry item-prop">{{skill.system.total_bonus}}</div></td>
-      <td><div class="skill-controls">
-        <a class="skill-control item-edit" title="Edit Skill"><i class="fas fa-edit"></i></a>
-        <a class="skill-control item-delete" title="Delete Skill"><i class="fas fa-trash"></i></a>
-      </div></td>
-    </tr>
+      {{#if skill.system.favorite}}
+        <div><a class="skill-favorite" data-item-id="{{skill._id}}"><i class="fa-regular fa-square-check"></i></a></div>
+      {{else}}
+        <div><a class="skill-favorite" data-item-id="{{skill._id}}"><i class="fa-regular fa-square"></i></a></div>
+      {{/if}}
+      <!--<div><input type="checkbox" name="system.favorite" {{checked skill.system.favorite}}/></div>-->
+      <div>{{skill.name}}</div>
+      <div>{{skill.system.ranks}}</div>
+      <div>{{skill.system.new_ranks}}</div>
+      <div>{{skill.system.rank_bonus}}</div>
+      <div>{{skill.system.category_bonus}}</div>
+      <div>{{skill.system.item_bonus}}</div>
+      <div>{{skill.system.special_bonus_1}}</div>
+      <div>{{skill.system.special_bonus_2}}</div>
+      <div>{{skill.system.total_bonus}}</div>
+      <div>
+        <a class="item-edit" title="Edit Skill" data-item-id="{{skill._id}}"><i class="fas fa-edit"></i></a>
+        <a class="item-delete" title="Delete Skill" data-item-id="{{skill._id}}"><i class="fas fa-trash"></i></a>
+      </div>
   {{/each}}
-</table>
+</div>

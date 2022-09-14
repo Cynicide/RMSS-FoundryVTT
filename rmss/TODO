@@ -9,18 +9,30 @@ Small
     DONE - Skills and Skill Categories are now seperate checks for Drag and Drop as some share names
     Spells ?
 5. Fix New Ranks Clickboxes - https://discord.com/channels/170995199584108546/670336275496042502/1018530650980102195
-6. Fix Favorites Clickboxes on Actor Page
+    https://github.com/megastruktur/foundryvtt-blades-in-the-dark/blob/master/templates/actor-sheet.html#L97
+    https://github.com/megastruktur/foundryvtt-blades-in-the-dark/blob/00bed1cb1d222eab3ece62960941c54f3c272aac/module/blades.js#L69
+6. DONE - Fix Favorites Clickboxes on Actor Page
+    DONE - Better Icon
+    DONE - Make Clickable
+7. Create Default Values for Character sheet
 
 Medium 
 
-4. Inventory sorted by types
+1. Inventory sorted by types
     i. Drag and drop should increment an item if it already exists.
     ii. Equipables
     iii. Favorites
-5. Creature Sheet
-6. Finish Character Sheet
+2. Creature Sheet
+3. Finish Character Sheet
+    Inventory  
+    Spells
+    Status Record (Possibly large)
+    XP
+4. Button to add all Skill Categories
+5. Revisit Skill and Skill Category Progression (Pg 33)
+6. DONE - Add occupational, everyman, and restricted skill categories
 
 Large
 
-6. Dice Roller
-7. Initiative System
+1. Dice Roller
+2. Initiative System

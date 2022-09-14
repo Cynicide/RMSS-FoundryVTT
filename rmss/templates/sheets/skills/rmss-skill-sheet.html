@@ -11,6 +11,12 @@
             </select>
         </div>
         <div>
+            Skill Designation
+            <select name="system.designation" class="app-stat-selector" value="{{system.designation}}" itemid="{{ item._id }}">
+                {{selectOptions designations selected=system.designation}}
+            </select>
+        </div>
+        <div>
             <table>
                 <tr>
                     <th>{{localize "rmss.skill.favorite"}}</th>

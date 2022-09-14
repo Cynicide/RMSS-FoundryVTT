@@ -49,10 +49,10 @@ export default class RMSSPlayerSheet extends ActorSheet {
             
             console.log(owneditems);
 
-            var owneditemslist = Object.values(owneditems);
+            var ownedskillcatlist = Object.values(owneditems);
          
             // Check if the dragged item is not in the array and not owned
-            if (!owneditemslist.includes(itemData.name)) {
+            if (!ownedskillcatlist.includes(itemData.name)) {
                 console.log("Not Owned!");
                 super._onDropItem(event, data);
            }
@@ -62,10 +62,10 @@ export default class RMSSPlayerSheet extends ActorSheet {
                         
             console.log(owneditems);
 
-            var owneditemslist = Object.values(owneditems);
+            var ownedskilllist = Object.values(owneditems);
 
             // Check if the dragged item is not in the array and not owned
-            if (!owneditemslist.includes(itemData.name)) {
+            if (!ownedskilllist.includes(itemData.name)) {
                 console.log("Not Owned!");
                 super._onDropItem(event, data);
             }
@@ -154,6 +154,21 @@ export default class RMSSPlayerSheet extends ActorSheet {
             const item = this.actor.items.get(ev.currentTarget.getAttribute("data-item-id"));
             //console.log(ev.currentTarget.getAttribute("data-item-id"));
             item.delete();
+        });
+
+        // Check/Uncheck Favorite
+        html.find('.skill-favorite').click(ev => {
+            const item = this.actor.items.get(ev.currentTarget.getAttribute("data-item-id"));
+            console.log(item);
+            console.log("Before change: " + item.system.favorite);
+            if (item.system.favorite === true) {
+                console.log("Setting False");
+                item.update({system: {"favorite": false}});
+            } else {
+                console.log("Setting True");
+                item.update({system: {"favorite": true}});
+            }            
+            console.log("After change: " + item.system.favorite);
         });
     }
     
