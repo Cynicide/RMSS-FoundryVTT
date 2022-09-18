@@ -53,8 +53,8 @@ rmss.stats = {
 };
 
 rmss.skill_designations = {
-    none: "None",
-    occupational: "Occupational",
-    everyman: "Everyman", 
-    restricted: "Restricted"
+    None: "None",
+    Occupational: "Occupational",
+    Everyman: "Everyman", 
+    Restricted: "Restricted"
 };

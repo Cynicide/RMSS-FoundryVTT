@@ -1,0 +1,42 @@
+.items-grid-container {
+    display: grid;
+    grid-template-columns: [name] 30% [quantity] 17% [weight] 17% [cost] 18% [controls] 18%;
+}
+
+.items-grid-container > div {
+    font-family: Signika, sans-serif;
+    font-size: 12px;
+    text-align: center;
+    border-bottom: 1px solid;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.items-grid-container > div:nth-child(10n+1),
+.items-grid-container > div:nth-child(10n+2),
+.items-grid-container > div:nth-child(10n+3),
+.items-grid-container > div:nth-child(10n+4),
+.items-grid-container > div:nth-child(10n+5)
+{
+    font-family: Signika, sans-serif;
+    font-size: 12px;
+    text-align: center;
+    border-bottom: 1px solid;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row;
+    justify-content: center;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0 0);
+}
+
+.items-grid-heading {
+    font-weight: bold;
+    border-bottom: 1px solid;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0 0);
+}

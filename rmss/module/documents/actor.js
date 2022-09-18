@@ -146,26 +146,17 @@ export class RMSSActor extends Actor {
   // For each skill category return an object in this format.
   // {{ _id: "skill category name"}}
   // This is the format that the select helper on the skill sheet needs
-  getOwnedSkillCategories() {
-    var ownedSkillCategories = {None: "None"};
-      console.log("rmss | actor.js | Getting owned skill categories for: " + this.name);
+
+  getOwnedItemsByType(item_type) {
+    var ownedItems = {None: "None"};
+      console.log("rmss | actor.js | Getting owned " + item_type + " for: " + this.name);
       for (const item of this.items) {
-      if (item.type === "skill_category") {
-        ownedSkillCategories[item._id] = item.name;
+      if (item.type === item_type) {
+        ownedItems[item._id] = item.name;
       }
     }
-    return(ownedSkillCategories);
+    return(ownedItems);
   }
 
-  getOwnedSkills() {
-    var ownedSkills = {None: "None"};
-      console.log("rmss | actor.js | Getting owned skills for: " + this.name);
-      for (const item of this.items) {
-      if (item.type === "skill") {
-        ownedSkills[item._id] = item.name;
-      }
-    }
-    return(ownedSkills);
-  }
 
 }

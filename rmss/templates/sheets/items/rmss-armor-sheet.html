@@ -7,12 +7,16 @@
         <div>
             <table>
                 <tr>
+                    <th>{{localize "rmss.item.equipped"}}</th>
                     <th>{{localize "rmss.item.quantity"}}</th>
                     <th>{{localize "rmss.armor.weight"}}</th>
                     <th>{{localize "rmss.armor.cost"}}</th>
                     <th>{{localize "rmss.armor.prod_time"}}</th>
                     <th>{{localize "rmss.armor.at"}}</th>
                 </tr>
+                <td>
+                    <input type="checkbox" name="system.equipped" {{checked system.equipped}}/>
+                </td>
                 <td>
                     <input name="system.quantity" type="text" value="{{system.quantity}}" data-dtype="Number"/>
                 </td>

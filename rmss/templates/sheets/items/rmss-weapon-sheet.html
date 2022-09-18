@@ -7,6 +7,7 @@
         <div>
             <table>
                 <tr>
+                    <th>{{localize "rmss.weapon.equipped"}}</th>
                     <th>{{localize "rmss.item.quantity"}}</th>
                     <th>{{localize "rmss.weapon.cost"}}</th>
                     <th>{{localize "rmss.weapon.type"}}</th>
@@ -17,6 +18,9 @@
                     <th>{{localize "rmss.weapon.fumble_range"}}</th>
 
                 </tr>
+                <td>
+                    <input type="checkbox" name="system.equipped" {{checked system.equipped}}/>
+                </td>
                 <td>
                     <input name="system.quantity" type="text" value="{{system.quantity}}" data-dtype="Number"/>
                 </td>
