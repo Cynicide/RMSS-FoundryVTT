@@ -1,0 +1,49 @@
+.skillcat-grid-container {
+    display: grid;
+    grid-template-columns: [skill-category-name] 10% [applicable-stats] 10% [dev-cost] 8% [num-ranks] 8% [new-ranks] 8% [rank-bonus] 8% [stat-bonus] 8% [prof-bonus] 8% [special-bonus-1] 8% [special-bonus-2] 8% [total-bonus] 8% [controls] 8%;
+}
+
+.skillcat-grid-container > div {
+    font-family: Signika, sans-serif;
+    font-size: 12px;
+    text-align: center;
+    border-bottom: 1px solid;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.skillcat-grid-container > div:nth-child(24n+1),
+.skillcat-grid-container > div:nth-child(24n+2),
+.skillcat-grid-container > div:nth-child(24n+3),
+.skillcat-grid-container > div:nth-child(24n+4),
+.skillcat-grid-container > div:nth-child(24n+5),
+.skillcat-grid-container > div:nth-child(24n+6),
+.skillcat-grid-container > div:nth-child(24n+7),
+.skillcat-grid-container > div:nth-child(24n+8),
+.skillcat-grid-container > div:nth-child(24n+9),
+.skillcat-grid-container > div:nth-child(24n+10),
+.skillcat-grid-container > div:nth-child(24n+11),
+.skillcat-grid-container > div:nth-child(24n+12)
+{
+    font-family: Signika, sans-serif;
+    font-size: 12px;
+    text-align: center;
+    border-bottom: 1px solid;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    justify-content: center;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0 0);
+}
+
+.skillcat-grid-heading {
+    font-weight: bold;
+    border-bottom: 1px solid;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0 0);
+}

@@ -1,0 +1,25 @@
+<div class="herbs-grid-container">
+    
+    <!-- LOCALIZE THE LAST STRINGS IN THIS PAGE. ALSO SKILLS AND SKILL CATEGORIES-->
+    <div class="herbs-grid-heading">{{ localize "rmss.pc_sheet_items.item_name" }}</div>
+    <div class="herbs-grid-heading">{{ localize "rmss.pc_sheet_items.quantity" }}</div>
+    <div class="herbs-grid-heading">{{ localize "rmss.herb_or_poison.codes" }}</div>
+    <div class="herbs-grid-heading">{{ localize "rmss.herb_or_poison.af" }}</div>
+    <div class="herbs-grid-heading">{{ localize "rmss.pc_sheet_items.weight" }}</div>
+    <div class="herbs-grid-heading">{{ localize "rmss.pc_sheet_items.cost" }}</div>
+    <div class="herbs-grid-heading">
+      <a class="item-control item-create" title="Create Item" data-type="herb_or_poison"><i class="fas fa-plus"></i>{{ localize "rmss.pc_sheet_items.add_item" }}</a>
+    </div>
+  {{#each herbs as |herb id|}}
+      <div>{{herb.name}}</div>
+      <div>{{herb.system.quantity}}</div>
+      <div>{{herb.system.codes}}</div>
+      <div>{{herb.system.af}}</div>
+      <div>{{herb.system.weight}}</div>
+      <div>{{herb.system.cost}}</div>
+      <div>
+        <a class="item-control item-edit" title="Edit Item" data-item-id="{{herb._id}}"><i class="fas fa-edit"></i></a>
+        <a class="item-control item-delete" title="Delete Item" data-item-id="{{herb._id}}"><i class="fas fa-trash"></i></a>
+      </div>
+  {{/each}}
+  </div>

@@ -171,15 +171,17 @@
           }
         }
       },
-      "money": {
-        "mithril": 1,
-        "platinum": 2,
-        "gold": 3,
-        "silver": 4,
-        "bronze": 5,
-        "copper": 6,
-        "tin": 7,
-        "iron": 8
+      "money": { 
+        "money": {
+          "mithril": 1,
+          "platinum": 2,
+          "gold": 3,
+          "silver": 4,
+          "bronze": 5,
+          "copper": 6,
+          "tin": 7,
+          "iron": 8
+        }
       }
     },
     
@@ -234,6 +236,7 @@
     },
     "armor": {
       "templates": ["base"],
+      "equipped": false,
       "quantity": 1,
       "weight": 0,
       "cost": 0,
@@ -242,6 +245,7 @@
     },
     "weapon": {
       "templates": ["base"],
+      "equipped": false,
       "quantity": 1,
       "cost": 0,
       "weight": 0,
@@ -265,7 +269,11 @@
       "templates": ["base"],
       "category" : "",
       "ranks": 0,
-      "new_ranks": 0,
+      "new_ranks": {
+        "value": [0],
+        "max": 3,
+        "max_default": 3
+      },
       "rank_bonus": -15,
       "category_bonus": 0,
       "item_bonus": 0,
@@ -283,7 +291,11 @@
       "app_stat_3": "None",      
       "development_cost": "0",
       "ranks": 0,
-      "new_ranks": 0,
+      "new_ranks": {
+        "value": 0,
+        "max": 3,
+        "max_default": 3
+      },
       "rank_bonus": -15,
       "stat_bonus": 0,
       "prof_bonus": 0,

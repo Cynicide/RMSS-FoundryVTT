@@ -1,0 +1,44 @@
+.herbs-grid-container {
+    display: grid;
+    grid-template-columns: [name] 30% [quantity] 11% [codes] 12% [af] 12% [weight] 12% [cost] 11% [controls] 12%;
+}
+
+.herbs-grid-container > div {
+    font-family: Signika, sans-serif;
+    font-size: 12px;
+    text-align: center;
+    border-bottom: 1px solid;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.herbs-grid-container > div:nth-child(14n+1),
+.herbs-grid-container > div:nth-child(14n+2),
+.herbs-grid-container > div:nth-child(14n+3),
+.herbs-grid-container > div:nth-child(14n+4),
+.herbs-grid-container > div:nth-child(14n+5),
+.herbs-grid-container > div:nth-child(14n+6),
+.herbs-grid-container > div:nth-child(14n+7)
+{
+    font-family: Signika, sans-serif;
+    font-size: 12px;
+    text-align: center;
+    border-bottom: 1px solid;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row;
+    justify-content: center;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0 0);
+}
+
+.herbs-grid-heading {
+    font-weight: bold;
+    border-bottom: 1px solid;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0 0);
+}

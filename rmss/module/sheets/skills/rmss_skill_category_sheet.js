@@ -21,17 +21,16 @@ export default class RMSSSkillCategorySheet extends ItemSheet {
         const context = await super.getData();
 
         // Get a list of stats that can be used as applicable stats
-        var applicable_stat_list = this.prepareApplicableStatValues(CONFIG);
+        var applicableStatList = this.prepareApplicableStatNames(CONFIG);
 
         //Get the currently selected value for all three applicable stats
-        var applicable_stat_1_selected = this.prepareApplicableSelectedStat("app_stat_1");
-        var applicable_stat_2_selected = this.prepareApplicableSelectedStat("app_stat_2");
-        var applicable_stat_3_selected = this.prepareApplicableSelectedStat("app_stat_3");
+        var firstApplicableStat = this.prepareApplicableSelectedStat("app_stat_1");
+        var secondApplicableStat = this.prepareApplicableSelectedStat("app_stat_2");
+        var thirdApplicableStat = this.prepareApplicableSelectedStat("app_stat_3");
 
         // Build and apply the display string for Applicable Stats
-        var applicable_stat_text = this.buildApplicableStatsText(applicable_stat_1_selected, applicable_stat_2_selected, applicable_stat_3_selected);
-        //context.item.system['applicable_stats'] = applicable_stat_text;
-        context.item.system.applicable_stats = applicable_stat_text;
+        var applicableStatText = this.buildApplicableStatsText(firstApplicableStat, secondApplicableStat, thirdApplicableStat);        
+        context.item.system.applicable_stats = applicableStatText;
 
         var enrichedDescription = await TextEditor.enrichHTML(this.item.system.description, {async: true});
 
@@ -41,55 +40,57 @@ export default class RMSSSkillCategorySheet extends ItemSheet {
             item: context.item,
             system: context.item.system,
             config: CONFIG.rmss,
-            applicable_stat_list: applicable_stat_list,
-            applicable_stat_1_selected: applicable_stat_1_selected,
-            applicable_stat_2_selected: applicable_stat_2_selected,
-            applicable_stat_3_selected: applicable_stat_3_selected,
+            applicable_stat_list: applicableStatList,
+            applicable_stat_1_selected: firstApplicableStat,
+            applicable_stat_2_selected: secondApplicableStat,
+            applicable_stat_3_selected: thirdApplicableStat,
             enrichedDescription: enrichedDescription
         };
         return sheetData;
         }
 
         async _setApplicableStat(item, ev) {            
-            // Build a JSON Object from the select tag value and select name (item data attribute key) 
-            var update_key = ev.currentTarget.getAttribute("name");
-            var update_data = ev.target.value;
+            // Build a JSON Object from the selected tag value and selected name (item data attribute key) 
+            var updateKey = ev.currentTarget.getAttribute("name");
+            var updateData = ev.target.value;
             
             // Update Item Data
-            await item.update({[update_key]: update_data});
+            await item.update({[updateKey]: updateData});
         }
 
-        prepareApplicableStatValues(CONFIG) {
-            var applicable_stat_list = {None: "None"};
-
-            // Get a list of stat shortnames from the config
-            for (const item in CONFIG.rmss.stats) {
-                applicable_stat_list[CONFIG.rmss.stats[item].shortname] = CONFIG.rmss.stats[item].shortname;
+        // Each Skill Category can have up to three Applicable Stats that apply to it. We need to get a list of 
+        // the Stat Shortnames from Config so the user can select which stats are applicable to this Skill Category
+        prepareApplicableStatNames(config) {
+            var applicableStatList = {None: "None"};
+            for (const item in config.rmss.stats) {
+                applicableStatList[config.rmss.stats[item].shortname] = config.rmss.stats[item].shortname;
             }
-            return applicable_stat_list;
+            return applicableStatList;
         }
 
-        // Determine which Stat is selected for applicable stats
-        prepareApplicableSelectedStat(app_stat) {
-            var applicable_stat_selected = "";
-            applicable_stat_selected = this.item.system[app_stat];
-            return applicable_stat_selected;
+        // Get the values for the currently selected Applicable Stat so we can display it on the Skill Category Sheet
+        // If nothing is selected return an empty string. 
+        prepareApplicableSelectedStat(appStat) {
+            var applicableStatSelected = "";
+            applicableStatSelected = this.item.system[appStat];
+            return applicableStatSelected;
         }
 
-        // Build the text that is displayed in the Applicable Stats field
-        buildApplicableStatsText(app_stat_1, app_stat_2, app_stat_3) {
-
-            if (app_stat_1 === "None") {
+        // The character sheet has an information field that displays the applicable stats in the following format
+        // St/Ag/St. This method checks the current applicable stats and builds that field so 
+        // it can be displayed to the user.
+        buildApplicableStatsText(firstAppStat, secondAppStat, thirdAppStat) {
+            if (firstAppStat === "None") {
                 return("None");
             }
-            else if (app_stat_1 !== "None" && app_stat_2 === "None") {
-                return(app_stat_1);
+            else if (firstAppStat !== "None" && secondAppStat === "None") {
+                return(firstAppStat);
             }
-            else if (app_stat_1 !== "None" && app_stat_2 !== "None" && app_stat_3 === "None" ) {
-                return(app_stat_1 + "/" + app_stat_2 );
+            else if (firstAppStat !== "None" && secondAppStat !== "None" && thirdAppStat === "None" ) {
+                return(firstAppStat + "/" + secondAppStat );
             }
-            else if (app_stat_1 !== "None" && app_stat_2 !== "None" && app_stat_3 !== "None" ) {
-                return(app_stat_1 + "/" + app_stat_2 + "/" + app_stat_3 );
+            else if (firstAppStat !== "None" && secondAppStat !== "None" && thirdAppStat !== "None" ) {
+                return(firstAppStat + "/" + secondAppStat + "/" + thirdAppStat );
             }
             else {
                 return("None");
@@ -103,7 +104,8 @@ export default class RMSSSkillCategorySheet extends ItemSheet {
             // Everything below here is only needed if the sheet is editable
             if (!this.isEditable) return;
             
-                // Update Applicable Stats for Skill Categories
+                // Every time the user selects one of the Applicable Stat dropdowns
+                // fire an event to change the value in the Skill Category
                 html.find('.stat-selector').change(ev => {
                     this._setApplicableStat(this.item, ev);
                 });

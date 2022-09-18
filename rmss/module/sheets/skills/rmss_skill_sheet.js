@@ -22,16 +22,11 @@ export default class RMSSSkillSheet extends ItemSheet {
 
         var enrichedDescription = await TextEditor.enrichHTML(this.item.system.description, {async: true});
 
-        // Get a list of stats that can be used as applicable stats
-        var designations = this.getSkillDesignations(CONFIG);
-
         // Get a list of the parent item's skill categories for the dropdown
-        var owned_skillcats = this.prepareSkillCategoryValues();
+        var ownedSkillCategories = this.prepareSkillCategoryValues();
 
         // Figure out if a valid Skill Category is already selected
-        var selected_skillcat = this.prepareSelectedSkillCategory(owned_skillcats, this.object.system.category);
-
-        //this.prepareSelectedSkillCategoryBonus(selected_skillcat);
+        var selectedSkillCategory = this.prepareSelectedSkillCategory(ownedSkillCategories, this.object.system.category);
 
         let sheetData = {
             owner: this.item.isOwner,
@@ -39,53 +34,68 @@ export default class RMSSSkillSheet extends ItemSheet {
             item: baseData.item,
             system: baseData.item.system,
             config: CONFIG.rmss,
-            owned_skillcats: owned_skillcats,
+            owned_skillcats: ownedSkillCategories,
             enrichedDescription: enrichedDescription,
-            selected_skillcat: selected_skillcat,
-            designations: designations
+            selected_skillcat: selectedSkillCategory,
+            designations: CONFIG.rmss.skill_designations
         };
 
         return sheetData;
         }
+    
+    activateListeners(html) { 
+        super.activateListeners(html);
 
+        // Catch the event when the user clicks one of the New Ranks Checkboxes. 
+        // It will increment by one or wrap back to zero on a value of three  
+        html.find('.skillsheet-newrank').click(ev => {       
+            switch(ev.currentTarget.getAttribute("value")) {
+                case "0": 
+                    this.object.update({system: {new_ranks:{ "value": 1 }}});
+                    break;
+                case "1": 
+                this.object.update({system: {new_ranks:{ "value": 2 }}});
+                    break;
+                case "2": 
+                    this.object.update({system: {new_ranks:{ "value": 3 }}});
+                    break;
+                case "3": 
+                    this.object.update({system: {new_ranks:{ "value": 0 }}});
+                    break;
+            }
+        });
+    }
+    
+    // Skills are related to Skill Categories so we need something to allow the user to choose that relationship
+    // If this Skill is owned then we will return a list of Skill Categories and allow them to choose
+    // Otherwise we'll just return 'Skill has no owner'
     prepareSkillCategoryValues() {            
-        // If there is no player owning this Skill then we cannot assign a category.
-        var skillcat_list = {None: "Skill Has No Owner", };
+        var skillNoOwner = {None: "Skill Has No Owner", };
 
         if (this.item.isEmbedded === null) {
-            return(skillcat_list);
+            return(skillNoOwner);
         } 
         else
         {
-            const skillcats = this.item.parent.getOwnedSkillCategories();
-            return(skillcats);
+            const skillCategories = this.item.parent.getOwnedItemsByType("skill_category");
+            return(skillCategories);
         }
     }
 
-    getSkillDesignations(CONFIG) {
-        var designations = {};
-
-        // Get a list of designations from the config
-        for (const item in CONFIG.rmss.skill_designations) {
-            designations[CONFIG.rmss.skill_designations[item]] = CONFIG.rmss.skill_designations[item];
-        }
-        return designations;
-    }
-
-    // Determine which Stat is selected and test that it is in the current list of categories.
-    prepareSelectedSkillCategory(ownedskillcats, selected_category) {
-        
-        // Start By setting the owned category to None, if nothing happens this will be the default
-        var default_selected_category = "None";
-
-        // Get a list of keys from the currently owned skill categories and compare to the current value
-        if (Object.keys(ownedskillcats).includes(selected_category)) {
-            return(selected_category);
+    // Determine which Skill Category is selected and test that it is in the current list of categories.
+    // If it isn't set it to None.
+    prepareSelectedSkillCategory(ownedSkillCategories, selectedSkillCategory) {
+        var defaultSelectedCategory = "None";
+        if (Object.keys(ownedSkillCategories).includes(selectedSkillCategory)) {
+            return(selectedSkillCategory);
         } else {
-            return(default_selected_category);
+            return(defaultSelectedCategory);
         }
     }
 
+    // Populate the Skill Category Bonus field on the Skill Sheet.
+    // Iterate through the owned skill categories and if one of them matches the item id of currently select skill category
+    // then set the Skill Category Bonus field to the Total Bonus field of the Skill Category 
     prepareSelectedSkillCategoryBonus(selected_skillcat) {
         if (this.item.isEmbedded === null) {
             console.log("Skill has no owner");

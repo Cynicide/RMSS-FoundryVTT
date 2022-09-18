@@ -1,0 +1,44 @@
+.armor-grid-container {
+    display: grid;
+    grid-template-columns: [name] 30% [equipped] 12% [at] 12% [quantity] 12% [weight] 12% [cost] 12% [controls] 10%;
+}
+
+.armor-grid-container > div {
+    font-family: Signika, sans-serif;
+    font-size: 12px;
+    text-align: center;
+    border-bottom: 1px solid;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.armor-grid-container > div:nth-child(14n+1),
+.armor-grid-container > div:nth-child(14n+2),
+.armor-grid-container > div:nth-child(14n+3),
+.armor-grid-container > div:nth-child(14n+4),
+.armor-grid-container > div:nth-child(14n+5),
+.armor-grid-container > div:nth-child(14n+6),
+.armor-grid-container > div:nth-child(14n+7)
+{
+    font-family: Signika, sans-serif;
+    font-size: 12px;
+    text-align: center;
+    border-bottom: 1px solid;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row;
+    justify-content: center;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0 0);
+}
+
+.armor-grid-heading {
+    font-weight: bold;
+    border-bottom: 1px solid;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0 0);
+}

@@ -21,7 +21,15 @@
       <!--<div><input type="checkbox" name="system.favorite" {{checked skill.system.favorite}}/></div>-->
       <div>{{skill.name}}</div>
       <div>{{skill.system.ranks}}</div>
-      <div>{{skill.system.new_ranks}}</div>
+      <div>
+        {{#switch skill.system.new_ranks.value}} 
+          {{#case 0}} <a class="skill-newrank" data-item-id="{{skill._id}}" value="{{skill.system.new_ranks.value}}"><i class="fa-regular fa-square"></i> <i class="fa-regular fa-square"></i> <i class="fa-regular fa-square"></i></a> {{/case}} 
+          {{#case 1}} <a class="skill-newrank" data-item-id="{{skill._id}}" value="{{skill.system.new_ranks.value}}"><i class="fa-regular fa-square-check"></i> <i class="fa-regular fa-square"></i> <i class="fa-regular fa-square"></i></a> {{/case}} 
+          {{#case 2}} <a class="skill-newrank" data-item-id="{{skill._id}}" value="{{skill.system.new_ranks.value}}"><i class="fa-regular fa-square-check"></i> <i class="fa-regular fa-square-check"></i> <i class="fa-regular fa-square"></i></a> {{/case}} 
+          {{#case 3}} <a class="skill-newrank" data-item-id="{{skill._id}}" value="{{skill.system.new_ranks.value}}"><i class="fa-regular fa-square-check"></i> <i class="fa-regular fa-square-check"></i> <i class="fa-regular fa-square-check"></i></a> {{/case}} 
+        {{/switch}}
+
+      </div>
       <div>{{skill.system.rank_bonus}}</div>
       <div>{{skill.system.category_bonus}}</div>
       <div>{{skill.system.item_bonus}}</div>

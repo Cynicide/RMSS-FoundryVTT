@@ -1,27 +1,28 @@
 Small
 
 1. DONE - Add Relationship between skills and skill categories
-2. Remove Tables and replace with CSS Grid
-3. Fix unaligned CSS
+2. DONE - Remove Tables from Player Sheet and replace with CSS Grid
+3. DONE - Fix unaligned CSS
 4. Prevent Duplication on Drag and Drop for Skills and Skill Categories, possibly spells too.
     DONE - Overriden _onDropItem on Player Sheet
     DONE - Skill Categories cannot be renamed if they are owned.
     DONE - Skills and Skill Categories are now seperate checks for Drag and Drop as some share names
     Spells ?
-5. Fix New Ranks Clickboxes - https://discord.com/channels/170995199584108546/670336275496042502/1018530650980102195
+5. DONE - Fix New Ranks Clickboxes - https://discord.com/channels/170995199584108546/670336275496042502/1018530650980102195
     https://github.com/megastruktur/foundryvtt-blades-in-the-dark/blob/master/templates/actor-sheet.html#L97
     https://github.com/megastruktur/foundryvtt-blades-in-the-dark/blob/00bed1cb1d222eab3ece62960941c54f3c272aac/module/blades.js#L69
 6. DONE - Fix Favorites Clickboxes on Actor Page
     DONE - Better Icon
     DONE - Make Clickable
 7. Create Default Values for Character sheet
+8. Make a Localization Pass for Missed Text
 
 Medium 
 
-1. Inventory sorted by types
-    i. Drag and drop should increment an item if it already exists.
-    ii. Equipables
-    iii. Favorites
+1. DONE Inventory sorted by types - Maybe Seperate Sections for now
+    DONE (Will not Do - Not needed) - i. Drag and drop should increment an item if it already exists.
+    DONE ii. Equipables
+    DONE (Will not Do - Not Needed)iii. Favorites
 2. Creature Sheet
 3. Finish Character Sheet
     Inventory  
@@ -29,7 +30,7 @@ Medium
     Status Record (Possibly large)
     XP
 4. Button to add all Skill Categories
-5. Revisit Skill and Skill Category Progression (Pg 33)
+5. Revisit Skill and Skill Category Progression (Pg 33, 69)
 6. DONE - Add occupational, everyman, and restricted skill categories
 
 Large

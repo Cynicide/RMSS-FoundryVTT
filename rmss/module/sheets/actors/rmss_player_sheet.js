@@ -45,9 +45,7 @@ export default class RMSSPlayerSheet extends ActorSheet {
         if (itemData.type === "skill_category"){
 
             // Get the already owned Items from the actor and push into an array
-            const owneditems = this.object.getOwnedSkillCategories();
-            
-            console.log(owneditems);
+            const owneditems = this.object.getOwnedItemsByType("skill_category");
 
             var ownedskillcatlist = Object.values(owneditems);
          
@@ -58,9 +56,7 @@ export default class RMSSPlayerSheet extends ActorSheet {
            }
         } else if ( itemData.type === "skill") {
             // Get the already owned Items from the actor and push into an array
-            const owneditems = this.object.getOwnedSkills();
-                        
-            console.log(owneditems);
+            const owneditems = this.object.getOwnedItemsByType("skill");
 
             var ownedskilllist = Object.values(owneditems);
 
@@ -84,13 +80,22 @@ export default class RMSSPlayerSheet extends ActorSheet {
         const gear = [];
         const playerskill= [];
         const skillcat = [];
+        const weapons = [];
+        const equipables = [];
+        const herbs = [];
         
         // Iterate through items, allocating to containers
         for (let i of context.items) {
             i.img = i.img || DEFAULT_TOKEN;
             // Append to gear.
-            if (i.type === 'item' || i.type === 'armor' || i.type === 'weapon' || i.type === 'herb_or_poison') {
+            if (i.type === 'item') {
                 gear.push(i);
+            }
+            else if (i.type === 'weapon') {
+                weapons.push(i);
+            }
+            else if (i.type === 'herb_or_poison') {
+                herbs.push(i);
             }
             // Append to skill categories.
             else if (i.type === 'skill_category') {
@@ -99,8 +104,12 @@ export default class RMSSPlayerSheet extends ActorSheet {
             // Append to playerskill
             else if (i.type === 'skill') {
                 playerskill.push(i);
+            }             
+            else if (i.type === 'armor') {
+                equipables.push(i);
             }
         }
+        
         
         // Sort Skill/Skillcat Arrays
         skillcat.sort(function (a, b){
@@ -128,12 +137,13 @@ export default class RMSSPlayerSheet extends ActorSheet {
         context.gear = gear;
         context.skillcat = skillcat;
         context.playerskill = playerskill;
+        context.weapons = weapons;
+        context.equipables = equipables;
+        context.herbs = herbs;
     }
     
     activateListeners(html) {
         super.activateListeners(html);
-        
-        // NOTE: Can you do skill/item favorites this way?
         
         // Render the item sheet for viewing/editing prior to the editable check.
         html.find('.item-edit').click(ev => {
@@ -151,8 +161,8 @@ export default class RMSSPlayerSheet extends ActorSheet {
         
         // Delete Item
         html.find('.item-delete').click(ev => {
+            console.log(ev.currentTarget.getAttribute("data-item-id"));
             const item = this.actor.items.get(ev.currentTarget.getAttribute("data-item-id"));
-            //console.log(ev.currentTarget.getAttribute("data-item-id"));
             item.delete();
         });
 
@@ -169,6 +179,52 @@ export default class RMSSPlayerSheet extends ActorSheet {
                 item.update({system: {"favorite": true}});
             }            
             console.log("After change: " + item.system.favorite);
+        });
+
+        // Equip/Unequip Item
+        html.find('.equippable').click(ev => {
+            const item = this.actor.items.get(ev.currentTarget.getAttribute("data-item-id"));
+            console.log(item);
+            console.log("Before change: " + item.system.equipped);
+            if (item.system.equipped === true) {
+                console.log("Setting False");
+                item.update({system: {"equipped": false}});
+            } else {
+                console.log("Setting True");
+                item.update({system: {"equipped": true}});
+            }            
+            console.log("After change: " + item.system.equipped);
+        });
+        
+        // Change New Ranks value when clicked in player sheet. From 0-3.
+        html.find('.skill-newrank').click(ev => {
+            const item = this.actor.items.get(ev.currentTarget.getAttribute("data-item-id"));
+
+            console.log("Firing in the Player Sheet");
+            console.log(ev.currentTarget.getAttribute("value"));
+            console.log(ev.currentTarget.getAttribute("data-item-id"));
+            
+            switch(ev.currentTarget.getAttribute("value")) {
+                case "0": 
+                    console.log("Skill NewRanks is 0 setting to 1");
+                    item.update({system: {new_ranks:{ "value": 1 }}});
+                    break;
+
+                case "1": 
+                console.log("Skill NewRanks is 1 setting to 2");
+                    item.update({system: {new_ranks:{ "value": 2 }}});
+                    break;
+
+                case "2": 
+                    console.log("Skill NewRanks is 2 setting to 3");
+                    item.update({system: {new_ranks:{ "value": 3 }}});
+                    break;
+
+                case "3": 
+                    console.log("Skill NewRanks is 3 setting to 0");
+                    item.update({system: {new_ranks:{ "value": 0 }}});
+                    break;
+            }
         });
     }
     

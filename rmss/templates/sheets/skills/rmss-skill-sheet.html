@@ -36,7 +36,14 @@
                     <input name="system.ranks" type="text" value="{{system.ranks}}" data-dtype="Number"/>
                 </td>
                 <td>
-                    <input name="system.new_ranks" type="text" value="{{system.new_ranks}}" data-dtype="Number"/>
+                    <div>
+                    {{#switch system.new_ranks.value}} 
+                        {{#case 0}} <a class="skillsheet-newrank" data-item-id="{{item._id}}" value="{{system.new_ranks.value}}"><i class="fa-regular fa-square"></i> <i class="fa-regular fa-square"></i> <i class="fa-regular fa-square"></i></a> {{/case}} 
+                        {{#case 1}} <a class="skillsheet-newrank" data-item-id="{{item._id}}" value="{{system.new_ranks.value}}"><i class="fa-regular fa-square-check"></i> <i class="fa-regular fa-square"></i> <i class="fa-regular fa-square"></i></a> {{/case}} 
+                        {{#case 2}} <a class="skillsheet-newrank" data-item-id="{{item._id}}" value="{{system.new_ranks.value}}"><i class="fa-regular fa-square-check"></i> <i class="fa-regular fa-square-check"></i> <i class="fa-regular fa-square"></i></a> {{/case}} 
+                        {{#case 3}} <a class="skillsheet-newrank" data-item-id="{{item._id}}" value="{{system.new_ranks.value}}"><i class="fa-regular fa-square-check"></i> <i class="fa-regular fa-square-check"></i> <i class="fa-regular fa-square-check"></i></a> {{/case}} 
+                    {{/switch}}
+                    </div>
                 </td>
                 <td>
                     <input name="system.rank_bonus" type="text" value="{{system.rank_bonus}}" data-dtype="Number"/>

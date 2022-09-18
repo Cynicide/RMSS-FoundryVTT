@@ -1,0 +1,46 @@
+.weapons-grid-container {
+    display: grid;
+    grid-template-columns: [name] 30% [equipped] 8% [breakage_range] 9% [fumble_range] 9% [strength] 9% [quantity] 9% [weight] 9% [cost] 9% [controls] 8%;
+}
+
+.weapons-grid-container > div {
+    font-family: Signika, sans-serif;
+    font-size: 12px;
+    text-align: center;
+    border-bottom: 1px solid;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.weapons-grid-container > div:nth-child(18n+1),
+.weapons-grid-container > div:nth-child(18n+2),
+.weapons-grid-container > div:nth-child(18n+3),
+.weapons-grid-container > div:nth-child(18n+4),
+.weapons-grid-container > div:nth-child(18n+5),
+.weapons-grid-container > div:nth-child(18n+6),
+.weapons-grid-container > div:nth-child(18n+7),
+.weapons-grid-container > div:nth-child(18n+8),
+.weapons-grid-container > div:nth-child(18n+9)
+{
+    font-family: Signika, sans-serif;
+    font-size: 12px;
+    text-align: center;
+    border-bottom: 1px solid;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row;
+    justify-content: center;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0 0);
+}
+
+.weapons-grid-heading {
+    font-weight: bold;
+    border-bottom: 1px solid;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0 0);
+}

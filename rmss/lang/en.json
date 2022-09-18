@@ -130,6 +130,7 @@
             "add_skillcat": "Add Skill Category" 
         },
         "pc_sheet_items": {
+            "equipped": "Equipped",
             "favorite": "Favorite",
             "quantity": "Quantity",
             "item_name": "Item Name",
@@ -163,7 +164,8 @@
             "quantity": "Quantity",
             "weight": "Weight",
             "cost": "Cost",
-            "prod_time": "Production Time"
+            "prod_time": "Production Time",
+            "equipped": "Equipped"
         },
         "armor": {
             "at": "AT",
@@ -178,7 +180,8 @@
             "weight": "Weight",
             "breakage_range": "B#s",
             "strength": "Str",
-            "fumble_range": "Fumble"            
+            "fumble_range": "Fumble",
+            "equipped": "Equipped"            
         },
         "herb_or_poison": {
             "codes": "Codes",

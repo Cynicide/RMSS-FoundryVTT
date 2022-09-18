@@ -1,0 +1,48 @@
+.skills-grid-container {
+    display: grid;
+    grid-template-columns: [favorite] 9% [skill-name] 11% [num-ranks] 9% [new-ranks] 9% [rank-bonus] 9% [category-bonus] 9% [item-bonus] 9% [special-bonus-1] 9% [special-bonus-2] 9% [total-bonus] 9% [controls] 8%;
+}
+
+.skills-grid-container > div {
+    font-family: Signika, sans-serif;
+    font-size: 12px;
+    text-align: center;
+    border-bottom: 1px solid;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.skills-grid-container > div:nth-child(22n+1),
+.skills-grid-container > div:nth-child(22n+2),
+.skills-grid-container > div:nth-child(22n+3),
+.skills-grid-container > div:nth-child(22n+4),
+.skills-grid-container > div:nth-child(22n+5),
+.skills-grid-container > div:nth-child(22n+6),
+.skills-grid-container > div:nth-child(22n+7),
+.skills-grid-container > div:nth-child(22n+8),
+.skills-grid-container > div:nth-child(22n+9),
+.skills-grid-container > div:nth-child(22n+10),
+.skills-grid-container > div:nth-child(22n+11)
+{
+    font-family: Signika, sans-serif;
+    font-size: 12px;
+    text-align: center;
+    border-bottom: 1px solid;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    justify-content: center;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0 0);
+}
+
+.skills-grid-heading {
+    font-weight: bold;
+    border-bottom: 1px solid;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0 0);
+}
