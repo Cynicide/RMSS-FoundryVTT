@@ -10,7 +10,7 @@
     <div class="armor-grid-heading">
       <a class="item-control item-create" title="Create Item" data-type="armor"><i class="fas fa-plus"></i>{{ localize "rmss.pc_sheet_items.add_item" }}</a>
     </div>
-  {{#each equipables as |equipable id|}}
+  {{#each armor as |equipable id|}}
         <div>{{equipable.name}}</div>         
         {{#if equipable.system.equipped}}
           <div><a class="equippable" data-item-id="{{equipable._id}}"><i class="fa-regular fa-square-check"></i></a></div>

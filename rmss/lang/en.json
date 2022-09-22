@@ -38,6 +38,7 @@
             "skill_categories": "Skill Categories",
             "skills": "Skills",
             "equipment": "Equipment",
+            "spells": "Spells",
             "status_record": "Status Record",
             "experience_points": "Experience Points"
         },
@@ -138,6 +139,16 @@
             "cost": "Cost",
             "add_item": "Add Item"
         },
+        "pc_sheet_spell": {
+            "favorite": "Favorite",
+            "level": "Level",
+            "name": "Name",
+            "spell_list": "Spell List",
+            "area_of_effect": "Area of Effect",
+            "duration": "Duration",
+            "range": "Range",
+            "type": "Type"
+        },
         "entity_sheet": {
             "spell": "RMSS Spell",
             "weapon": "RMSS Weapon",
@@ -201,6 +212,7 @@
             "offensive_bonus": "OB"
         },
         "spell": {
+            "favorite": "Favorite",
             "spell_list": "Spell List",
             "level": "Level",
             "area_of_effect": "Area of Effect",

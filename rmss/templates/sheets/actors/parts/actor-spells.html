@@ -1,0 +1,30 @@
+<div class="spell-grid-container">
+    <div class="spell-grid-heading">{{ localize "rmss.pc_sheet_spell.favorite" }}</div>
+    <div class="spell-grid-heading">{{ localize "rmss.pc_sheet_spell.level" }}</div>
+    <div class="spell-grid-heading">{{ localize "rmss.pc_sheet_spell.name" }}</div>
+    <div class="spell-grid-heading">{{ localize "rmss.pc_sheet_spell.spell_list" }}</div>
+    <div class="spell-grid-heading">{{ localize "rmss.pc_sheet_spell.area_of_effect" }}</div>
+    <div class="spell-grid-heading">{{ localize "rmss.pc_sheet_spell.duration" }}</div>
+    <div class="spell-grid-heading">{{ localize "rmss.pc_sheet_spell.range" }}</div>
+    <div class="spell-grid-heading">{{ localize "rmss.pc_sheet_spell.type" }}</div>
+    <div class="spell-grid-heading">
+    </div>
+  {{#each spells as |spell id|}}
+      {{#if spell.system.favorite}}
+        <div><a class="spell-favorite" data-item-id="{{spell._id}}"><i class="fa-regular fa-square-check"></i></a></div>
+      {{else}}
+        <div><a class="spell-favorite" data-item-id="{{spell._id}}"><i class="fa-regular fa-square"></i></a></div>
+      {{/if}}
+      <div>{{spell.system.level}}</div>
+      <div>{{spell.name}}</div>
+      <div>{{spell.system.spell_list}}</div>
+      <div>{{spell.system.area_of_effect}}</div>
+      <div>{{spell.system.duration}}</div>
+      <div>{{spell.system.range}}</div>
+      <div>{{spell.system.type}}</div>
+      <div>
+        <a class="item-edit" title="Edit Spell" data-item-id="{{spell._id}}"><i class="fas fa-edit"></i></a>
+        <a class="item-delete" title="Delete Spell" data-item-id="{{spell._id}}"><i class="fas fa-trash"></i></a>
+      </div>
+  {{/each}}
+</div>

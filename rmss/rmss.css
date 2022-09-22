@@ -49,6 +49,9 @@
 .actor-icon {
   flex-shrink: 1;
 }
+.favorite-container {
+  padding: 5px;
+}
 .header-container {
   flex-grow: 2;
   outline: 1px solid;
@@ -386,9 +389,53 @@
   border-bottom: 1px solid;
   background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0 0);
 }
+.spell-grid-container {
+  display: grid;
+  grid-template-columns: [favorite] 9% [level] 8% [name] 30% [spell_list] 9% [area_of_effect] 9% [duration] 9% [range] 9% [type] 9% [controls] 8%;
+}
+.spell-grid-container > div {
+  font-family: Signika, sans-serif;
+  font-size: 12px;
+  text-align: center;
+  border-bottom: 1px solid;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: row;
+  justify-content: center;
+}
+.spell-grid-container > div:nth-child(18n+1),
+.spell-grid-container > div:nth-child(18n+2),
+.spell-grid-container > div:nth-child(18n+3),
+.spell-grid-container > div:nth-child(18n+4),
+.spell-grid-container > div:nth-child(18n+5),
+.spell-grid-container > div:nth-child(18n+6),
+.spell-grid-container > div:nth-child(18n+7),
+.spell-grid-container > div:nth-child(18n+8),
+.spell-grid-container > div:nth-child(18n+9) {
+  font-family: Signika, sans-serif;
+  font-size: 12px;
+  text-align: center;
+  border-bottom: 1px solid;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: row;
+  justify-content: center;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0 0);
+}
+.spell-grid-heading {
+  font-weight: bold;
+  border-bottom: 1px solid;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0 0);
+}
 .skillcat-name,
 .skill-name,
-.item-name {
+.item-name,
+.spell-name,
+.equipable-name {
   font-family: Signika, sans-serif;
   font-size: 12px;
   font-weight: bold;
@@ -396,14 +443,18 @@
 }
 .skillcat-entry,
 .skill-entry,
-.item-entry {
+.item-entry,
+.spell-entry,
+.equipable-entry {
   font-family: Signika, sans-serif;
   font-size: 12px;
   text-align: center;
 }
 .skillcat-headeritem,
 .skill-headeritem,
-.item-headeritem {
+.item-headeritem,
+.spell-headeritem,
+.equipable-headeritem {
   text-align: center;
   font-weight: bold;
 }

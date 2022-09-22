@@ -4,52 +4,52 @@
     "templates": {
       "role_traits": {
         "role_traits": {
-          "appearance": 10,
-          "sex": "mysex",
-          "skin": "myskin",
-          "apparent_age": 30,
-          "actual_age": 35,
-          "height": "myheight",
-          "weight": "myweight",
-          "hair": "myhair",
-          "eyes": "myeyes",
-          "personality": "mypersonality",
-          "motivations": "mymotivations",
-          "alignment": "myalignment"
+          "appearance": 0,
+          "sex": "",
+          "skin": "",
+          "apparent_age": 0,
+          "actual_age": 0,
+          "height": "",
+          "weight": "",
+          "hair": "",
+          "eyes": "",
+          "personality": "",
+          "motivations": "",
+          "alignment": ""
         }
       },
       "race_stat_fixed_info": {
         "race_stat_fixed_info" : {
-          "soul_departure_rounds": 5,
-          "recovery_multiplier": 7,
-          "body_development_progression": "research",
-          "pp_development_progression": "research",
-          "recover_hits_per_hour_resting": 6,
-          "recover_hits_per_sleep_cycle": 7,
-          "recover_pp_per_hour_resting": 8,
-          "recover_pp_per_sleep_cycle": 9
+          "soul_departure_rounds": 0,
+          "recovery_multiplier": 0,
+          "body_development_progression": "",
+          "pp_development_progression": "",
+          "recover_hits_per_hour_resting": 0,
+          "recover_hits_per_sleep_cycle": 0,
+          "recover_pp_per_hour_resting": 0,
+          "recover_pp_per_sleep_cycle": 0
         }
       },
       "armor_info": {
         "armor_info": {
-          "armor_type": 7,
-          "mmp": -10,
-          "weight_penalty": -5,
-          "missile_penalty": 30,
-          "quickness_penalty": 40,
-          "quickness_bonus": 60,
-          "adrenal_defense": 50,
-          "shield_bonus": 20,
-          "magic": "research",
-          "total_db": 102
+          "armor_type": 0,
+          "mmp": 0,
+          "weight_penalty": 0,
+          "missile_penalty": 0,
+          "quickness_penalty": 0,
+          "quickness_bonus": 0,
+          "adrenal_defense": 0,
+          "shield_bonus": 0,
+          "magic": "",
+          "total_db": 0
         }
       },
       "fixed_info": {
         "fixed_info": {
-          "race": "myrace",
-          "profession": "myprofession",
-          "training_packages": "mytrainingpackages",
-          "realm": "myrealm"
+          "race": "",
+          "profession": "",
+          "training_packages": "",
+          "realm": ""
         }
       },
       "resistance_rolls": {
@@ -67,14 +67,14 @@
       },
       "background": {
         "background": {
-          "nationality": "mynationality",
-          "home_town": "myhometown",
-          "deity": "mydeity",
-          "patron": "mypatron",
-          "parents": "myparents",
-          "spouse": "myspouse",
-          "children": "mychildren",
-          "other": "myother"
+          "nationality": "",
+          "home_town": "",
+          "deity": "",
+          "patron": "",
+          "parents": "",
+          "spouse": "",
+          "children": "",
+          "other": ""
         }
       },
       "stats": {
@@ -173,14 +173,14 @@
       },
       "money": { 
         "money": {
-          "mithril": 1,
-          "platinum": 2,
-          "gold": 3,
-          "silver": 4,
-          "bronze": 5,
-          "copper": 6,
-          "tin": 7,
-          "iron": 8
+          "mithril": 0,
+          "platinum": 0,
+          "gold": 0,
+          "silver": 0,
+          "bronze": 0,
+          "copper": 0,
+          "tin": 0,
+          "iron": 0
         }
       }
     },
@@ -196,12 +196,12 @@
           "max": 1
         },
         "exhaustion_points": {
-          "current": 2,
-          "max": 2
+          "current": 1,
+          "max": 1
         },
         "power_points": {
-          "current": 3,
-          "max": 3
+          "current": 1,
+          "max": 1
         },
         "experience_points": {
           "value": 0
@@ -249,19 +249,19 @@
       "quantity": 1,
       "cost": 0,
       "weight": 0,
-      "type" : "nothing",
+      "type" : "",
       "prod_time": 0,
       "at": 0,
-      "breakage_range": "nothing",
-      "strength": "nothing",
-      "fumble_range": "nothing"
+      "breakage_range": "",
+      "strength": "",
+      "fumble_range": ""
     },
     "herb_or_poison": {
       "templates": ["base"],
       "quantity": 1,
       "weight": 0,
-      "codes": "nothing",
-      "form_and_prep" : "nothing",
+      "codes": "",
+      "form_and_prep" : "",
       "cost": 0,
       "af": 0
     },
@@ -305,13 +305,14 @@
       "favorite": false
     },
     "spell": {
-      "spell_list": "Open Channeling",
+      "favorite": false,
+      "spell_list": "",
       "level": 1,
-      "area_of_effect": "10 x 10 x 1",
-      "duration": "C",
-      "range": 50,
-      "type": "E",
-      "description": "My New Spell!"
+      "area_of_effect": "",
+      "duration": "",
+      "range": "",
+      "type": "",
+      "description": "Description here."
     }
   }
 }

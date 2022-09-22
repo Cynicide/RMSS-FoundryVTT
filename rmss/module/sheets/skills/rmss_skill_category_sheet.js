@@ -4,7 +4,7 @@ export default class RMSSSkillCategorySheet extends ItemSheet {
     // Set the height and width
     static get defaultOptions() {
         return mergeObject(super.defaultOptions, {
-            width: 530,
+            width: 580,
             height: 440,
             template: "systems/rmss/templates/sheets/skills/rmss-skill-category-sheet.html",
             classes: ["rmss", "sheet", "item"]
@@ -108,6 +108,25 @@ export default class RMSSSkillCategorySheet extends ItemSheet {
                 // fire an event to change the value in the Skill Category
                 html.find('.stat-selector').change(ev => {
                     this._setApplicableStat(this.item, ev);
+                });
+            
+                // Catch the event when the user clicks one of the New Ranks Checkboxes in a Skill Category. 
+                // It will increment by one or wrap back to zero on a value of three  
+                html.find('.skillcategorysheet-newrank').click(ev => {       
+                    switch(ev.currentTarget.getAttribute("value")) {
+                        case "0": 
+                            this.object.update({system: {new_ranks:{ "value": 1 }}});
+                            break;
+                        case "1": 
+                        this.object.update({system: {new_ranks:{ "value": 2 }}});
+                            break;
+                        case "2": 
+                            this.object.update({system: {new_ranks:{ "value": 3 }}});
+                            break;
+                        case "3": 
+                            this.object.update({system: {new_ranks:{ "value": 0 }}});
+                            break;
+                    }
                 });
         }
 }

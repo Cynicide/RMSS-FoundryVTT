@@ -18,7 +18,14 @@
       <div>{{skill_category.system.applicable_stats}}</div>
       <div>{{skill_category.system.development_cost}}</div>
       <div>{{skill_category.system.ranks}}</div>
-      <div>{{skill_category.system.new_ranks}}</div>
+      <div>
+        {{#switch skill_category.system.new_ranks.value}} 
+          {{#case 0}} <a class="skillcategory-newrank" data-item-id="{{skill_category._id}}" value="{{skill_category.system.new_ranks.value}}"><i class="fa-regular fa-square"></i> <i class="fa-regular fa-square"></i> <i class="fa-regular fa-square"></i></a> {{/case}} 
+          {{#case 1}} <a class="skillcategory-newrank" data-item-id="{{skill_category._id}}" value="{{skill_category.system.new_ranks.value}}"><i class="fa-regular fa-square-check"></i> <i class="fa-regular fa-square"></i> <i class="fa-regular fa-square"></i></a> {{/case}} 
+          {{#case 2}} <a class="skillcategory-newrank" data-item-id="{{skill_category._id}}" value="{{skill_category.system.new_ranks.value}}"><i class="fa-regular fa-square-check"></i> <i class="fa-regular fa-square-check"></i> <i class="fa-regular fa-square"></i></a> {{/case}} 
+          {{#case 3}} <a class="skillcategory-newrank" data-item-id="{{skill_category._id}}" value="{{skill_category.system.new_ranks.value}}"><i class="fa-regular fa-square-check"></i> <i class="fa-regular fa-square-check"></i> <i class="fa-regular fa-square-check"></i></a> {{/case}} 
+        {{/switch}}
+      </div>
       <div>{{skill_category.system.rank_bonus}}</div>
       <div>{{skill_category.system.stat_bonus}}</div>
       <div>{{skill_category.system.prof_bonus}}</div>

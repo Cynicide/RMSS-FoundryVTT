@@ -39,7 +39,10 @@ async function preloadHandlebarsTemplates() {
     "systems/rmss/templates/sheets/actors/parts/actor-skill-categories.html",
     "systems/rmss/templates/sheets/actors/parts/actor-skills.html",
     "systems/rmss/templates/sheets/actors/parts/actor-armor.html",
-    "systems/rmss/templates/sheets/actors/parts/actor-herbs.html"
+    "systems/rmss/templates/sheets/actors/parts/actor-herbs.html",
+    "systems/rmss/templates/sheets/actors/parts/actor-spells.html",
+    "systems/rmss/templates/sheets/actors/parts/actor-fav-spells.html",
+    "systems/rmss/templates/sheets/actors/parts/actor-fav-items.html"
   ];
   return loadTemplates(templatePaths);
 }
@@ -93,7 +96,6 @@ Hooks.once("init", function () {
   preloadHandlebarsTemplates();
   
   // Handlebars Helpers
-
   Handlebars.registerHelper('switch', function(value, options) {
     this.switch_value = value;
     return options.fn(this);
