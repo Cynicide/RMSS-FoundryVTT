@@ -46,7 +46,7 @@ export default class RMSSSkillSheet extends ItemSheet {
     activateListeners(html) { 
         super.activateListeners(html);
 
-        // Catch the event when the user clicks one of the New Ranks Checkboxes. 
+        // Catch the event when the user clicks one of the New Ranks Checkboxes in a Skill. 
         // It will increment by one or wrap back to zero on a value of three  
         html.find('.skillsheet-newrank').click(ev => {       
             switch(ev.currentTarget.getAttribute("value")) {

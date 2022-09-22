@@ -1,0 +1,33 @@
+<table>
+    <th><div class="equipable-name equipable-headeritem">{{ localize "rmss.pc_sheet_items.item_name" }}</div></th>
+    <th><div class="equipable-entry equipable-headeritem">{{ localize "rmss.armor.at" }}</div></th>
+    <th><div class="equipable-entry equipable-headeritem">{{ localize "rmss.weapon.breakage_range" }}</div></th>
+    <th><div class="equipable-entry equipable-headeritem">{{ localize "rmss.weapon.fumble_range" }}</div></th>
+    <th><div class="equipable-entry equipable-headeritem">{{ localize "rmss.weapon.strength" }}</div></th>
+  {{#each armor as |equipable id|}}
+    {{#if equipable.system.equipped}}  
+        <tr class="item" data-item-id="{{equipable._id}}">
+            <td><div class="equipable-name">
+                <h4>{{equipable.name}}</h4>
+            </div></td>
+            <td><div class="equipable-entry item-prop"><div>{{equipable.system.at}}</div></div></td>
+            <td><div class="equipable-entry item-prop"> - </div></td>
+            <td><div class="equipable-entry item-prop"> - </div></td>
+            <td><div class="equipable-entry item-prop"> - </div></td>
+        </tr>
+    {{/if}}
+  {{/each}}
+  {{#each weapons as |weapon id|}}
+  {{#if weapon.system.equipped}}  
+      <tr class="item" data-item-id="{{weapon._id}}">
+          <td><div class="equipable-name">
+              <h4>{{weapon.name}}</h4>
+          </div></td>
+          <td><div class="equipable-entry item-prop"><div> - </div></div></td>
+          <td><div class="equipable-entry item-prop">{{weapon.system.breakage_range}}</div></td>
+          <td><div class="equipable-entry item-prop">{{weapon.system.fumble_range}}</div></td>
+          <td><div class="equipable-entry item-prop">{{weapon.system.strength}}</div></td>
+      </tr>
+  {{/if}}
+{{/each}}
+</table>

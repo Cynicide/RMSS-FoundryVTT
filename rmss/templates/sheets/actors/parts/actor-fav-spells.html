@@ -1,0 +1,20 @@
+<table>
+    <th><div class="spell-name spell-headeritem">{{ localize "rmss.pc_sheet_spell.name" }}</div></th>
+    <th><div class="spell-entry spell-headeritem">{{ localize "rmss.pc_sheet_spell.area_of_effect" }}</div></th>
+    <th><div class="spell-entry spell-headeritem">{{ localize "rmss.pc_sheet_spell.duration" }}</div></th>
+    <th><div class="spell-entry spell-headeritem">{{ localize "rmss.pc_sheet_spell.range" }}</div></th>
+    <th><div class="spell-entry spell-headeritem">{{ localize "rmss.pc_sheet_spell.type" }}</div></th>
+  {{#each spells as |spell id|}}
+    {{#if spell.system.favorite}}  
+        <tr class="item" data-item-id="{{spell._id}}">
+            <td><div class="spell-name">
+                <h4>{{spell.name}}</h4>
+            </div></td>
+            <td><div class="spell-entry item-prop">{{spell.system.area_of_effect}}</div></td>
+            <td><div class="spell-entry item-prop">{{spell.system.duration}}</div></td>
+            <td><div class="spell-entry item-prop">{{spell.system.range}}</div></td>
+            <td><div class="spell-entry item-prop">{{spell.system.type}}</div></td>
+        </tr>
+    {{/if}}
+  {{/each}}
+</table>

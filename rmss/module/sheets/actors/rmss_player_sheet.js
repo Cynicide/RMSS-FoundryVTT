@@ -81,8 +81,10 @@ export default class RMSSPlayerSheet extends ActorSheet {
         const playerskill= [];
         const skillcat = [];
         const weapons = [];
-        const equipables = [];
+        const armor = [];
         const herbs = [];
+        const spells = [];
+        const equipables = [];
         
         // Iterate through items, allocating to containers
         for (let i of context.items) {
@@ -106,7 +108,10 @@ export default class RMSSPlayerSheet extends ActorSheet {
                 playerskill.push(i);
             }             
             else if (i.type === 'armor') {
-                equipables.push(i);
+                armor.push(i);
+            }
+            else if (i.type === 'spell') {
+                spells.push(i);
             }
         }
         
@@ -132,14 +137,14 @@ export default class RMSSPlayerSheet extends ActorSheet {
               return 0;
         });
 
-
         // Assign and return
         context.gear = gear;
         context.skillcat = skillcat;
         context.playerskill = playerskill;
         context.weapons = weapons;
-        context.equipables = equipables;
+        context.armor = armor;
         context.herbs = herbs;
+        context.spells = spells;
     }
     
     activateListeners(html) {
@@ -166,8 +171,23 @@ export default class RMSSPlayerSheet extends ActorSheet {
             item.delete();
         });
 
-        // Check/Uncheck Favorite
+        // Check/Uncheck Favorite Skill
         html.find('.skill-favorite').click(ev => {
+            const item = this.actor.items.get(ev.currentTarget.getAttribute("data-item-id"));
+            console.log(item);
+            console.log("Before change: " + item.system.favorite);
+            if (item.system.favorite === true) {
+                console.log("Setting False");
+                item.update({system: {"favorite": false}});
+            } else {
+                console.log("Setting True");
+                item.update({system: {"favorite": true}});
+            }            
+            console.log("After change: " + item.system.favorite);
+        });
+
+        // Check/Uncheck Favorite Spell
+        html.find('.spell-favorite').click(ev => {
             const item = this.actor.items.get(ev.currentTarget.getAttribute("data-item-id"));
             console.log(item);
             console.log("Before change: " + item.system.favorite);
@@ -222,6 +242,37 @@ export default class RMSSPlayerSheet extends ActorSheet {
 
                 case "3": 
                     console.log("Skill NewRanks is 3 setting to 0");
+                    item.update({system: {new_ranks:{ "value": 0 }}});
+                    break;
+            }
+        });
+
+        // Change New Ranks value when clicked in player sheet. From 0-3.
+        html.find('.skillcategory-newrank').click(ev => {
+            const item = this.actor.items.get(ev.currentTarget.getAttribute("data-item-id"));
+
+            console.log("Firing in the Player Sheet");
+            console.log(ev.currentTarget.getAttribute("value"));
+            console.log(ev.currentTarget.getAttribute("data-item-id"));
+            
+            switch(ev.currentTarget.getAttribute("value")) {
+                case "0": 
+                    console.log("Skill Category NewRanks is 0 setting to 1");
+                    item.update({system: {new_ranks:{ "value": 1 }}});
+                    break;
+
+                case "1": 
+                console.log("Skill Category NewRanks is 1 setting to 2");
+                    item.update({system: {new_ranks:{ "value": 2 }}});
+                    break;
+
+                case "2": 
+                    console.log("Skill Category NewRanks is 2 setting to 3");
+                    item.update({system: {new_ranks:{ "value": 3 }}});
+                    break;
+
+                case "3": 
+                    console.log("Skill Category NewRanks is 3 setting to 0");
                     item.update({system: {new_ranks:{ "value": 0 }}});
                     break;
             }

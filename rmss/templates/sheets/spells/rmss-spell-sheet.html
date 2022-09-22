@@ -7,6 +7,7 @@
         <div>
             <table>
                 <tr>
+                    <th>{{localize "rmss.spell.favorite"}}</th>
                     <th>{{localize "rmss.spell.spell_list"}}</th>
                     <th>{{localize "rmss.spell.level"}}</th>
                     <th>{{localize "rmss.spell.area_of_effect"}}</th>
@@ -15,6 +16,9 @@
                     <th>{{localize "rmss.spell.type"}}</th>
 
                 </tr>
+                <td>
+                    <input type="checkbox" name="system.favorite" {{checked system.favorite}}/>
+                </td>
                 <td>
                     <input name="system.spell_list" type="text" value="{{system.spell_list}}" data-dtype="String"/>
                 </td>
@@ -28,7 +32,7 @@
                     <input name="system.duration" type="text" value="{{system.duration}}" data-dtype="String"/>
                 </td>
                 <td>
-                    <input name="system.range" type="text" value="{{system.range}}" data-dtype="Number"/>
+                    <input name="system.range" type="text" value="{{system.range}}" data-dtype="String"/>
                 </td>
                 <td>
                     <input name="system.type" type="text" value="{{system.type}}" data-dtype="String"/>

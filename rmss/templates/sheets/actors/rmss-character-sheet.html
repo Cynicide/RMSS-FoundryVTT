@@ -61,6 +61,7 @@
     <a class="item" data-tab="SkillCategory">{{ localize "rmss.pc_sheet_tabs.skill_categories" }}</a>
     <a class="item" data-tab="Skills">{{ localize "rmss.pc_sheet_tabs.skills" }}</a>
     <a class="item" data-tab="Equipment">{{ localize "rmss.pc_sheet_tabs.equipment" }}</a>
+    <a class="item" data-tab="Spells">{{ localize "rmss.pc_sheet_tabs.spells" }}</a>    
     <a class="item" data-tab="StatusRecord">{{ localize "rmss.pc_sheet_tabs.status_record" }}</a>
     <a class="item" data-tab="ExperiencePoints">{{ localize "rmss.pc_sheet_tabs.experience_points" }}</a>
   </nav>
@@ -79,8 +80,17 @@
         
         <div class="stat-container">
           {{> "systems/rmss/templates/sheets/actors/parts/actor-stats.html" }}
-          {{> "systems/rmss/templates/sheets/actors/parts/actor-fav-skills.html" }}
+          
+          <div class="favorite-container">
+            <h2>Favorite Skills</h2>
+            {{> "systems/rmss/templates/sheets/actors/parts/actor-fav-skills.html" }}
+            <h2>Favorite Spells</h2>
+            {{> "systems/rmss/templates/sheets/actors/parts/actor-fav-spells.html" }}          
+            <h2>Equipped Items</h2>
+            {{> "systems/rmss/templates/sheets/actors/parts/actor-fav-items.html" }} 
+          </div>
         </div>
+
 
       </div>
     </div>
@@ -112,6 +122,11 @@
         </div> 
       </div>
     </div>
+    <div class="tab spells" data-group="primary" data-tab="Spells">
+        <div class="spell-container">
+          {{> "systems/rmss/templates/sheets/actors/parts/actor-spells.html" }}
+        </div>       
+  </div>
   </section>
 </form>
 
