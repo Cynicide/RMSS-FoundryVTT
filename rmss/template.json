@@ -54,15 +54,51 @@
       },
       "resistance_rolls": {
         "resistance_rolls": {
-          "channeling": 0,
-          "essence": 0,
-          "mentalism": 0,
-          "chann_ess": 0,
-          "chann_ment": 0,
-          "ess_ment": 0,
-          "arcane": 0,
-          "poison_disease": 0,
-          "fear": 0
+          "channeling": {
+            "value": 0,
+            "race_mod": 0,
+            "total": 0
+          },
+          "essence": {
+            "value": 0,
+            "race_mod": 0,
+            "total": 0
+          },
+          "mentalism": {
+            "value": 0,
+            "race_mod": 0,
+            "total": 0
+          },
+          "chann_ess": {
+            "value": 0,
+            "race_mod": 0,
+            "total": 0
+          },
+          "chann_ment": {
+            "value": 0,
+            "race_mod": 0,
+            "total": 0
+          },
+          "ess_ment": {
+            "value": 0,
+            "race_mod": 0,
+            "total": 0
+          },
+          "arcane": {
+            "value": 0,
+            "race_mod": 0,
+            "total": 0
+          },
+          "poison_disease": {
+            "value": 0,
+            "race_mod": 0,
+            "total": 0
+          },
+          "fear": {
+            "value": 0,
+            "race_mod": 0,
+            "total": 0
+          }
         }
       },
       "background": {
@@ -184,9 +220,8 @@
         }
       }
     },
-    
     "character": {
-      "templates": ["background", "stats", "resistance_rolls", "armor_info", "fixed_info", "race_stat_fixed_info", "role_traits", "money"],
+      "templates": ["background", "stats", "resistance_rolls", "armor_info", "fixed_info", "race_stat_fixed_info", "role_traits", "money", "description"],
       "attributes": {
         "level": {
           "value": 1
@@ -206,11 +241,12 @@
         "experience_points": {
           "value": 0
         }
-      }
+      },
+      "description": ""
     }
   },
   "Item": {
-    "types": ["item", "skill_category", "skill", "armor", "weapon", "transport", "herb_or_poison", "spell"],
+    "types": ["item", "skill_category", "skill", "armor", "weapon", "transport", "herb_or_poison", "spell", "language"],
     "templates": {
       "base": {
         "description": "Description here."
@@ -218,6 +254,7 @@
     },
     "item": {
       "templates": ["base"],
+      "worn": false,
       "quantity": 1,
       "weight": 0,
       "cost": 0,
@@ -270,7 +307,7 @@
       "category" : "",
       "ranks": 0,
       "new_ranks": {
-        "value": [0],
+        "value": 0,
         "max": 3,
         "max_default": 3
       },

@@ -6,9 +6,10 @@
     <div class="container">
       
       <!-- Actor Icon Section-->
-      
-      <div class="actor-icon">
-        <img src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="64" width="64"/>
+      <div>
+        <div class="actor-icon">
+          <img src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="64" width="64"/>
+        </div>
       </div>
       
       <!-- Resource Boxes Section-->
@@ -17,17 +18,27 @@
         
         <div class="resource-entry">
           {{ localize "rmss.player_character.resources.hits" }}
-          <h4><input name="system.attributes.hits.current" type="text" value="{{system.attributes.hits.current}}"/>/<input name="system.attributes.hits.max" type="text" value="{{system.attributes.hits.max}}"/></h4>
+          <h4><input name="system.attributes.hits.current" type="Number" value="{{system.attributes.hits.current}}"/>/<input name="system.attributes.hits.max" type="Number" value="{{system.attributes.hits.max}}"/></h4>
         </div>
         
         <div class="resource-entry">
-          {{ localize "rmss.player_character.resources.exhaustion_points" }}
-          <h4><input name="system.attributes.exhaustion_points.current" type="text" value="{{system.attributes.exhaustion_points.current}}"/>/<input name="system.attributes.exhaustion_points.max" type="text" value="{{system.attributes.exhaustion_points.max}}"/></h4>
+          <div class="exhaustion-resources">
+            {{ localize "rmss.player_character.resources.exhaustion_points" }}
+            <h4><input name="system.attributes.exhaustion_points.current" type="Number" value="{{system.attributes.exhaustion_points.current}}"/>/<input name="system.attributes.exhaustion_points.max" type="Number" value="{{system.attributes.exhaustion_points.max}}"/></h4>
+          </div>
+          <div class="exhaustion-modifier">
+            <label>{{system.attributes.exhaustion_points.modifier}}</label>
+          </div>
         </div>
         
         <div class="resource-entry">
-          {{ localize "rmss.player_character.resources.power_points" }}
-          <h4><input name="system.attributes.power_points.current" type="text" value="{{system.attributes.power_points.current}}"/>/<input name="system.attributes.power_points.max" type="text" value="{{system.attributes.power_points.max}}"/></h4>
+          <div class="pp-resources">
+            {{ localize "rmss.player_character.resources.power_points" }}
+            <h4><input name="system.attributes.power_points.current" type="Number" value="{{system.attributes.power_points.current}}"/>/<input name="system.attributes.power_points.max" type="Number" value="{{system.attributes.power_points.max}}"/></h4>
+          </div>
+          <div class="pp-exhaustion">
+            <label>{{system.attributes.power_points.modifier}}</label>
+          </div>
         </div>
       </div>
       
@@ -41,12 +52,12 @@
         
         <div class="header-text flexrow">
           <label for="level">{{ localize "rmss.player_character.level" }}</label>
-          <input name="level" type="text" value="{{system.attributes.level.value}}"/>
+          <input name="system.attributes.level.value" type="text" value="{{system.attributes.level.value}}"/>
         </div>
         
         <div class="header-text flexrow">
           <label for="experience">{{ localize "rmss.player_character.experience" }}</label>
-          <input name="experience" type="text" value="{{system.attributes.experience_points.value}}"/>
+          <input name="system.attributes.experience_points.value" type="text" value="{{system.attributes.experience_points.value}}"/>
         </div>
       </div>
       
@@ -88,6 +99,8 @@
             {{> "systems/rmss/templates/sheets/actors/parts/actor-fav-spells.html" }}          
             <h2>Equipped Items</h2>
             {{> "systems/rmss/templates/sheets/actors/parts/actor-fav-items.html" }} 
+            <h2>Description</h2>
+            {{editor enrichedDescription target="system.description" button=true owner=owner editable=editable}}
           </div>
         </div>
 

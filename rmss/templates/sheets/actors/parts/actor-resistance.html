@@ -1,84 +1,53 @@
-<section class="resistance-block">
-    <ol class="labels-list">
-        <li class="stat flexrow" >
-            <div class="label-name">
-                <h4>{{ localize "rmss.pc_sheet_resistances.channeling" }}</h4>
-            </div>
-            <div class="label-name">
-                <h4>{{system.resistance_rolls.channeling}}</h4>
-            </div>
-        </li>
+<section class="resistances-grid-container">
+    
+    <div class="resistances-grid-heading">Name</div>
+    <div class="resistances-grid-heading">Value</div>
+    <div class="resistances-grid-heading">Racial Mod</div>
+    <div class="resistances-grid-heading">Total</div>
 
-        <li class="stat flexrow" >
-            <div class="label-name">
-                <h4>{{ localize "rmss.pc_sheet_resistances.essence" }}</h4>
-            </div>
-            <div class="label-name">
-                <h4>{{system.resistance_rolls.essence}}</h4>
-            </div>
-        </li>
+    <div>{{ localize "rmss.pc_sheet_resistances.channeling" }}</div>
+    <div>{{system.resistance_rolls.channeling.value}}</div>
+    <div class="resistance-input"><input type="text" name="system.resistance_rolls.channeling.race_mod" value="{{system.resistance_rolls.channeling.race_mod}}" data-dtype="Number"/></div>
+    <div>{{system.resistance_rolls.channeling.total}}</div>
 
-        <li class="stat flexrow" >
-            <div class="label-name">
-                <h4>{{ localize "rmss.pc_sheet_resistances.mentalism" }}</h4>
-            </div>
-            <div class="label-name">
-                <h4>{{system.resistance_rolls.mentalism}}</h4>
-            </div>
-        </li>
+    <div>{{ localize "rmss.pc_sheet_resistances.essence" }}</div>
+    <div>{{system.resistance_rolls.essence.value}}</div>
+    <div class="resistance-input"><input type="text" name="system.resistance_rolls.essence.race_mod" value="{{system.resistance_rolls.essence.race_mod}}" data-dtype="Number"/></div>
+    <div>{{system.resistance_rolls.essence.total}}</div>
 
-        <li class="stat flexrow" >
-            <div class="label-name">
-                <h4>{{ localize "rmss.pc_sheet_resistances.chann_ess" }}</h4>
-            </div>
-            <div class="label-name">
-                <h4>{{system.resistance_rolls.chann_ess}}</h4>
-            </div>
-        </li>    
+    <div>{{ localize "rmss.pc_sheet_resistances.mentalism" }}</div>
+    <div>{{system.resistance_rolls.mentalism.value}}</div>
+    <div class="resistance-input"><input type="text" name="system.resistance_rolls.mentalism.race_mod" value="{{system.resistance_rolls.mentalism.race_mod}}" data-dtype="Number"/></div>
+    <div>{{system.resistance_rolls.mentalism.total}}</div>
 
-        <li class="stat flexrow" >
-            <div class="label-name">
-                <h4>{{ localize "rmss.pc_sheet_resistances.chann_ment" }}</h4>
-            </div>
-            <div class="label-name">
-                <h4>{{system.resistance_rolls.chann_ment}}</h4>
-            </div>
-        </li>  
+    <div>{{ localize "rmss.pc_sheet_resistances.chann_ess" }}</div>
+    <div>{{system.resistance_rolls.chann_ess.value}}</div>
+    <div class="resistance-input"><input type="text" name="system.resistance_rolls.chann_ess.race_mod" value="{{system.resistance_rolls.chann_ess.race_mod}}" data-dtype="Number"/></div>
+    <div>{{system.resistance_rolls.chann_ess.total}}</div>
+
+    <div>{{ localize "rmss.pc_sheet_resistances.chann_ment" }}</div>
+    <div>{{system.resistance_rolls.chann_ment.value}}</div>
+    <div class="resistance-input"><input type="text" name="system.resistance_rolls.chann_ment.race_mod" value="{{system.resistance_rolls.chann_ment.race_mod}}" data-dtype="Number"/></div>
+    <div>{{system.resistance_rolls.chann_ment.total}}</div>
+
+    <div>{{ localize "rmss.pc_sheet_resistances.ess_ment" }}</div>
+    <div>{{system.resistance_rolls.ess_ment.value}}</div>
+    <div class="resistance-input"><input type="text" name="system.resistance_rolls.ess_ment.race_mod" value="{{system.resistance_rolls.ess_ment.race_mod}}" data-dtype="Number"/></div>
+    <div>{{system.resistance_rolls.ess_ment.total}}</div>
+
+    <div>{{ localize "rmss.pc_sheet_resistances.arcane" }}</div>
+    <div>{{system.resistance_rolls.arcane.value}}</div>
+    <div class="resistance-input"><input type="text" name="system.resistance_rolls.arcane.race_mod" value="{{system.resistance_rolls.arcane.race_mod}}" data-dtype="Number"/></div>
+    <div>{{system.resistance_rolls.arcane.total}}</div>        
+    
+    <div>{{ localize "rmss.pc_sheet_resistances.poison_disease" }}</div>
+    <div>{{system.resistance_rolls.poison_disease.value}}</div>
+    <div class="resistance-input"><input type="text" name="system.resistance_rolls.poison_disease.race_mod" value="{{system.resistance_rolls.poison_disease.race_mod}}" data-dtype="Number"/></div>
+    <div>{{system.resistance_rolls.poison_disease.total}}</div> 
+    
+    <div>{{ localize "rmss.pc_sheet_resistances.fear" }}</div>
+    <div>{{system.resistance_rolls.fear.value}}</div>
+    <div class="resistance-input"><input type="text" name="system.resistance_rolls.fear.race_mod" value="{{system.resistance_rolls.fear.race_mod}}" data-dtype="Number"/></div>
+    <div>{{system.resistance_rolls.fear.total}}</div>
         
-        <li class="stat flexrow" >
-            <div class="label-name">
-                <h4>{{ localize "rmss.pc_sheet_resistances.ess_ment" }}</h4>
-            </div>
-            <div class="label-name">
-                <h4>{{system.resistance_rolls.ess_ment}}</h4>
-            </div>
-        </li>    
-
-        <li class="stat flexrow" >
-            <div class="label-name">
-                <h4>{{ localize "rmss.pc_sheet_resistances.arcane" }}</h4>
-            </div>
-            <div class="label-name">
-                <h4>{{system.resistance_rolls.arcane}}</h4>
-            </div>
-        </li>
-        
-        <li class="stat flexrow" >
-            <div class="label-name">
-                <h4>{{ localize "rmss.pc_sheet_resistances.poison_disease" }}</h4>
-            </div>
-            <div class="label-name">
-                <h4>{{system.resistance_rolls.poison_disease}}</h4>
-            </div>
-        </li> 
-        
-        <li class="stat flexrow" >
-            <div class="label-name">
-                <h4>Fear</h4>
-            </div>
-            <div class="label-name">
-                <h4>{{system.resistance_rolls.fear}}</h4>
-            </div>
-        </li>  
-    </ol>
 </section>
