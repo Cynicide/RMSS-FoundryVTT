@@ -11,7 +11,9 @@
     <div class="skillcat-grid-heading">{{ localize "rmss.pc_sheet_skill_categories.special_bonus" }}</div>
     <div class="skillcat-grid-heading">{{ localize "rmss.pc_sheet_skill_categories.total_bonus" }}</div>
     <div class="skillcat-grid-heading">
-     <!-- <a class="item-create" title="Create Skill Category" data-type="skill_category"><i class="fas fa-plus"></i>{{ localize "rmss.pc_sheet_skill_categories.add_skillcat" }}</a>-->
+      <div class="settings-button">
+        <button type="button" class="import-skillcats" title="Import" acotr_id="">{{ localize "rmss.pc_sheet.import_skillcat" }}</button>
+      </div>
     </div>
   {{#each skillcat as |skill_category id|}}
       <div>{{skill_category.name}}</div>

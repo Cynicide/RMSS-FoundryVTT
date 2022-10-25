@@ -65,6 +65,12 @@
   align-items: center;
   padding: 1px;
 }
+.settings-button,
+.playersheet-settings {
+  font-family: Signika, sans-serif;
+  font-size: 12px;
+  margin-right: 6px;
+}
 .resource-container {
   display: flex;
   flex-direction: row;
@@ -231,7 +237,7 @@
 }
 .items-grid-container {
   display: grid;
-  grid-template-columns: [name] 30% [quantity] 17% [weight] 17% [cost] 18% [controls] 18%;
+  grid-template-columns: [worn] 10% [name] 30% [quantity] 15% [weight] 15% [cost] 15% [controls] 15%;
 }
 .items-grid-container > div {
   font-family: Signika, sans-serif;
@@ -245,11 +251,12 @@
   flex-direction: row;
   justify-content: center;
 }
-.items-grid-container > div:nth-child(10n+1),
-.items-grid-container > div:nth-child(10n+2),
-.items-grid-container > div:nth-child(10n+3),
-.items-grid-container > div:nth-child(10n+4),
-.items-grid-container > div:nth-child(10n+5) {
+.items-grid-container > div:nth-child(12n+1),
+.items-grid-container > div:nth-child(12n+2),
+.items-grid-container > div:nth-child(12n+3),
+.items-grid-container > div:nth-child(12n+4),
+.items-grid-container > div:nth-child(12n+5),
+.items-grid-container > div:nth-child(12n+6) {
   font-family: Signika, sans-serif;
   font-size: 12px;
   text-align: center;
@@ -430,6 +437,23 @@
   font-weight: bold;
   border-bottom: 1px solid;
   background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0 0);
+}
+.resistances-grid-container {
+  outline: 1px solid;
+  /* use instead of border */
+  margin-top: 1px;
+  margin-left: 1px;
+  padding: 5px;
+  display: grid;
+  grid-template-columns: [Name] 40% [Value] 20% [Race_Mod] 20% [Total] 20%;
+}
+.resistances-grid-heading {
+  font-weight: bold;
+  border-bottom: 1px solid;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0 0);
+}
+.resistance-input {
+  width: 50%;
 }
 .skillcat-name,
 .skill-name,

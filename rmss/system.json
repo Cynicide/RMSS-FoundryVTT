@@ -3,7 +3,7 @@
   "title": "Rolemaster Standard System",
   "description": "The Rolemaster Standard System system for FoundryVTT.",
   "author": "Cynicide",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "minimumCoreVersion": "0.8.6",
   "compatibleCoreVersion": "10",
   "esmodules":[

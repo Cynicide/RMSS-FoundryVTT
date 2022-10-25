@@ -33,6 +33,9 @@
                 "stat_total": "Total"
             }
         },
+        "pc_sheet": {
+            "import_skillcat": "Import"
+        },
         "pc_sheet_tabs": {
             "record": "Record",
             "skill_categories": "Skill Categories",
@@ -128,10 +131,11 @@
             "prof_bonus": "Prof Bonus",
             "special_bonus": "Special Bonus",
             "total_bonus": "Total Bonus",
-            "add_skillcat": "Add Skill Category" 
+            "import_skillcat": "Import Skill Categories" 
         },
         "pc_sheet_items": {
             "equipped": "Equipped",
+            "worn": "Worn",
             "favorite": "Favorite",
             "quantity": "Quantity",
             "item_name": "Item Name",
@@ -148,6 +152,11 @@
             "duration": "Duration",
             "range": "Range",
             "type": "Type"
+        },
+        "pc_sheet_language": {
+            "name": "Name",
+            "spoken": "Spoken",
+            "written": "Written"
         },
         "entity_sheet": {
             "spell": "RMSS Spell",
@@ -171,6 +180,7 @@
             "cp": "Copper Pieces"
         },
         "item": {
+            "worn": "Worn",
             "description": "Other Notes",
             "quantity": "Quantity",
             "weight": "Weight",
@@ -245,6 +255,11 @@
             "special_bonus_2": "Special Bonus 2:",
             "total_bonus": "Total Bonus:",
             "description": "Description:"
+        },
+        "language": {
+            "spoken": "Spoken",
+            "written": "Written",
+            "description": "Description"
         }
     }
 }

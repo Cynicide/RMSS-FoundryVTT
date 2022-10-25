@@ -6,9 +6,11 @@ This is an in-development implementation of the Rolemaster Standard System for F
 If you need access to the Rolemaster Standard System you may be out of luck as the system has been out of print for some time. However it's successor Rolemaster Fantasy Roleplaying is broadly compatible and can be purchased as a PDF via Drive Thru RPG here: https://www.drivethrurpg.com/product/91995/Rolemaster-Fantasy-Role-Playing?cPath=1361_6495
 
 ## How to Use
-Download the latest release from this repository and then extract the rmss folder. Drag it into the systems folder of your FoundryVTT Data Directory. More detailed instructions can be found here in the docs directory.
+Download the latest release from this repository and then extract the rmss folder. Drag it into the systems folder of your FoundryVTT Data Directory. More detailed instructions can be found [here](docs/INSTALL.md) in the docs directory.
 
 If you are using this system I highly recommend the "Simple Dice Roller" module which will allow you to roll dice easily while this feature is in development. You can install it in the Foundry Modules section or you can visit the following link for more instructions: https://foundryvtt.com/packages/simple-dice-roller/
+
+Further information on how the system works can be found [here](docs/USAGE.md)
 
 ## Goals/ToDo
 Project goals include:

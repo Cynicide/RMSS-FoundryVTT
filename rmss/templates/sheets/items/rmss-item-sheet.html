@@ -7,11 +7,15 @@
         <div>
             <table>
                 <tr>
+                    <th>{{localize "rmss.item.worn"}}</th>
                     <th>{{localize "rmss.item.quantity"}}</th>
                     <th>{{localize "rmss.item.weight"}}</th>
                     <th>{{localize "rmss.item.cost"}}</th>
                     <th>{{localize "rmss.item.prod_time"}}</th>
                 </tr>
+                <td>
+                    <input type="checkbox" name="system.worn" {{checked system.worn}}/>
+                </td>
                 <td>
                     <input name="system.quantity" type="text" value="{{system.quantity}}" data-dtype="Number"/>
                 </td>
